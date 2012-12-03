@@ -17,6 +17,7 @@ Created user stories.
 	Talk about creating many and that we've compressed them into to use case scenarios.
 		Use case for vet student needing/using the app.
 		Use case of Fiona adding a new slide and editing a new question.
+List requirements.
 
 4. Architecture/System Design (Andrew)
 ----------------------------
