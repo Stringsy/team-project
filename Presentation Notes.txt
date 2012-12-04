@@ -10,7 +10,7 @@ Describe project
 		Show similar apps
 		Describe what she wanted (a drug calculation learning/revision app)
 
-3. Requirements & Prototype (Nicole)
+3. Requirements (Nicole)
 ---------------------------
 Talk about meeting Fiona, gathering requirements.
 Created user stories.
