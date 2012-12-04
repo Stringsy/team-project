@@ -10,7 +10,7 @@ Describe project
 		Show similar apps
 		Describe what she wanted (a drug calculation learning/revision app)
 
-3. Requirements & Prototype (Nicole)
+3. Requirements (Nicole)
 ---------------------------
 Talk about meeting Fiona, gathering requirements.
 Created user stories.
@@ -38,6 +38,8 @@ Diagram of the different components of web application
 ---------------------
 Talk about comparing/choosing Django/Web2Py/Rails
 Show and talk about pros & cons of each.
+https://groups.google.com/forum/?fromgroups=#!topic/django-users/ftGqyZUBND0
+https://groups.google.com/forum/?fromgroups=#!topic/web2py/ohtk6Wroh7Q
 Why we chose Django in the end.
 
 
@@ -51,6 +53,7 @@ Link app protoyping with next section, future plans/implementation
 
 6. FUTURE PLANS FOR IMPLEMENTATION (Ross/Mamas)
 ---------------------------------
+Tools we're using: Python, Django, Github, Twitterbootstrap, HTML/CSS/Jetc
 Learning Django (and integrating with JQuery/Javascript/AJAX)
 Further prototyping (Aim to have a basic prototype by christmas)
 Feedback
