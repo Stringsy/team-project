@@ -1,3 +1,4 @@
+from tastypie.utils.timezone import now
 from django.db import models
 from PIL import Image
 from django.core.files.base import ContentFile
@@ -18,6 +19,3 @@ class Question(models.Model):
 class Slide(models.Model):
 	sTopic = models.ForeignKey(Topic)
 	image =models.ImageField(upload_to='slides')
-
-
- 
