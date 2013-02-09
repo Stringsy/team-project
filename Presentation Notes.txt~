@@ -1,0 +1,70 @@
+1. Team Introduction (Asset)
+--------------------
+(Show member names)
+
+2. Project Background (Asset)
+--------------------
+Describe project
+	Who the client is (talk very briefly about fiona & the position she holds in the vet school)
+	What she wanted
+		Show similar apps
+		Describe what she wanted (a drug calculation learning/revision app)
+
+3. Requirements (Nicole)
+---------------------------
+Talk about meeting Fiona, gathering requirements.
+Created user stories.
+	Talk about creating many and that we've compressed them into to use case scenarios.
+		Use case for vet student needing/using the app.
+		Use case of Fiona adding a new slide and editing a new question.
+
+4. Architecture/System Design (Andrew)
+----------------------------
+Diagram of the different components of web application
+	Overall structure	
+		Application backend (Django)
+			Data Storage (some kinda database)		
+		Application frontend (HTML/Javascript)
+			Admin View
+				Adding/editing/removing slides/questions
+			Student View 		
+				Topic navigation
+					Slide Navigation
+					Slide questions
+				Overall Assessment Page (emulate a sample exam question concerning drug calculation)
+		
+5. Technology Choices (Mamas)
+---------------------
+Talk about comparing/choosing Django/Web2Py/Rails
+Show and talk about pros & cons of each.
+https://groups.google.com/forum/?fromgroups=#!topic/django-users/ftGqyZUBND0
+https://groups.google.com/forum/?fromgroups=#!topic/web2py/ohtk6Wroh7Q
+Why we chose Django in the end.
+
+
+5. Prototyping (Ross)
+---------------------
+Mention how backend prototyping not really applicable/relevant as unseen by end user(s).
+Talk about making various front end (student view) prototypes for Fiona.
+Display prototype she liked the best.
+Display nicer version or just the nice version of it.
+Link app protoyping with next section, future plans/implementation
+
+6. FUTURE PLANS FOR IMPLEMENTATION (Ross/Mamas)
+---------------------------------
+Tools we're using: Python, Django, Github, Twitterbootstrap, HTML/CSS/Jetc
+Learning Django (and integrating with JQuery/Javascript/AJAX)
+Further prototyping (Aim to have a basic prototype by christmas)
+Feedback
+Develop from feedback
+Start to include users in feedback
+Develop from feedback
+Dissertation
+
+7. Thanks & Feedback (Asset)
+--------------------
+Any questions?
+Cheers :)
+
+
+

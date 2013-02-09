@@ -1,0 +1,236 @@
+% This example An LaTeX document showing how to use the l3proj class to
+% write your report. Use pdflatex and bibtex to process the file, creating 
+% a PDF file as output (there is no need to use dvips when using pdflatex).
+
+% Modified 
+
+\documentclass{l3proj}
+\begin{document}
+\title{Team V - How Not To Kill Your Dog}
+\author{Ross Adam \\
+        Andrew Gardner \\
+        Nicole Kearns \\
+        Mamas Nicolaou \\
+        Asset Sarsengaliyev}
+\date{18 March 2013}
+\maketitle
+
+\chapter{Requirements}
+\label{req}
+
+\section{Investigation Of Existing Artifacts}
+
+There are a few similar tools and learning resources available for vet students. This section discusses some of the current tools and a few tools which our client, Fiona Dowell, showed us in order to give us an idea of what she wanted for the application.
+
+\subsection{NHS Adult Drug Calculations}
+
+\begin{figure}[!htb]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/NHSDrugApp/NHSDrugApp2.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/NHSDrugApp/NHSDrugApp4.png}
+\endminipage
+\end{figure}
+
+
+The NHS Adult Drug Calculations, a smartphone based learning tool, allows the user to browse through different topics. Within each topic, there are a few slides providing the user with the information and theory, and then has "Check your knowledge" slides containing multiple choice questions to test the user on what they have learned.
+
+\subsection{Vet Calculator}
+
+\begin{figure}[!htb]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp1.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp3.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp4.png}
+\endminipage
+\end{figure}
+
+The Vet Calculator, an android based tool, allows the user to enter the necessary details - weight, dose, formulation, volume of fluid, etc. and the produces the result for the user.
+
+\subsection{Bitesize}
+
+ROSS TO DO!
+
+\section{Client Interview}
+
+In October, we met with our client, Fiona Dowell, 
+
+\section{Functional Requirements}
+
+\subsection{Requirements Table}
+
+\textbf{Student}\\
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Id} & \textbf{Requirement}\\
+\hline SR1 & View Topic\\
+\hline SR2 & View Slides\\
+\hline SR3 & View Questions\\
+\hline SR4 & Answer Questions\\
+\hline 
+\end{tabular}
+\end{center}
+
+\textbf{User Admin}\\
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Id} & \textbf{Requirement}\\
+\hline UAR1 & Add User\\
+\hline UAR2 & Delete User\\
+\hline UAR3 & Set Permissions\\
+\hline 
+\end{tabular}
+\end{center}
+
+\textbf{Content Admin}\\
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{Id} & \textbf{Requirement}\\
+\hline CAR1 & Add Topic\\
+\hline CAR2 & Edit Topic\\
+\hline CAR3 & Delete Topic\\
+\hline CAR4 & Add Slide\\
+\hline CAR5 & Edit Slide\\
+\hline CAR6 & Delete Slide\\
+\hline CAR7 & Add Questions\\
+\hline CAR8 & Edit Questions\\
+\hline CAR9 & Delete Questions\\
+\hline 
+\end{tabular}
+\end{center}
+
+
+\subsection{Use Case Diagrams}
+
+\begin{center}
+\includegraphics
+[scale=0.5]
+{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/Student.png}
+\end{center}
+\begin{center} Student \end{center}
+
+\begin{center}
+\includegraphics
+[scale=0.5]
+{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/UserAdmin.png}
+\end{center}
+\begin{center} User Admin \end{center}
+
+\begin{center}
+\includegraphics
+[scale=0.5]
+{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/ContentAdmin.png}
+\end{center}
+\begin{center} Content Admin \end{center}
+
+\subsection{Student Requirement Details}
+
+\textbf{SR1: View Topics}\\
+\textbf{Description}: Users must be able to view the different topics in the application. \\
+\textbf{Rationale}: The students must be able to view the different topics in the application. This will allow them to navigate through the different topics as the progress through the slides and topics.\\
+\textbf{Priority}: Must Have \\
+
+
+\textbf{SR2: View Slides}\\
+\textbf{Description}: Users must be able to view the different slides in the application. \\
+\textbf{Rationale}: The students must be able to view the different slides in the learning application. The student will be able to navigate back and forward through the different slides of a topic and read through the content on each.  \\
+\textbf{Priority}: Must Have\\
+
+
+\textbf{SR3: View Questions}\\
+\textbf{Description}: Users must be able to view the different questions in the application. \\
+\textbf{Rationale}: The student must be able to view the questions in the application. This will allow the students to go through the different questions related to the information given in the slides.\\
+\textbf{Priority}: Must Have\\
+
+
+\textbf{SR4: Answer Questions}\\
+\textbf{Description}: Users must be able to answer the questions in the application.\\
+\textbf{Rationale}: The student must be able to answer the questions in the learning application. This will allow the students to test see how much they learned from the information provided in the slides. \\
+\textbf{Priority}: Must Have\\
+\textbf{Dependencies}: SR3\\
+
+
+\subsection{User Admin Requirements Details}
+
+\textbf{UAR1: Add User} \\
+\textbf{Description}: The admin user must be able to add a user.  \\
+\textbf{Rationale}: The admin users must be able to create a new user account to allow other users to use the application and have access to the content management.\\
+\textbf{Priority}: Must have \\
+
+\textbf{UAR2: Delete User} \\
+\textbf{Description}: The admin user should be able to delete a user. \\ 
+\textbf{Rationale}: The admin user should be able to remove users from the system, meaning that they will no longer be able to login or have access to any of the content management.\\
+\textbf{Priority}: Should have \\
+\textbf{Dependencies}: UAR1\\
+
+\textbf{UAR3: Set Permission} \\
+\textbf{Description}: The admin user must be able to set user permissions.\\
+\textbf{Rationale}: The admin user must be able to set user permissions in order to provide users with the appropriate access.\\
+\textbf{Priority}: Must have \\
+\textbf{Dependencies}: UAR1\\
+
+\subsection{Content Admin Requirements Details}
+
+\textbf{CAR1: Add Topic}\\
+\textbf{Description}:  The admin users must be able to add a new topic. \\
+\textbf{Rationale}: The admin user must be able to create a new topic within the admin site. \\
+\textbf{Priority}: Must have\\
+
+
+\textbf{CAR2: Edit Topic}\\
+\textbf{Description}: The admin users should be able to edit a current topic.\\
+\textbf{Rationale}: The admin user should be able to edit a current topic for the application. This will allow the admin user to update the topic if it changes\\
+\textbf{Priority}: Should Have \\
+\textbf{Dependencies}: CAR1\\
+
+\textbf{CAR3: Delete Topic}\\
+\textbf{Description}: The admin users must be able to delete a current topic. \\
+\textbf{Rationale}: The admin users must be able to remove a current topic from the application. This will mean that the topic will no longer be available within the application.\\
+\textbf{Priority}: Must Have \\
+\textbf{Dependencies}: CAR1\\
+
+\textbf{CAR4: Add Slide}\\
+\textbf{Description}:  The admin users must be able to add a new slide. \\
+\textbf{Rationale}: The admin users must be able to add new slides to the application. This will provide the content for the students to browse through. \\
+\textbf{Priority}: Must Have\\
+
+\textbf{CAR5: Edit Slide}\\
+\textbf{Description}: The admin users should be able to edit a slide.\\
+\textbf{Rationale}:  The admin users should be able to edit a current slide stored in the application. The user should be able to change individual slides in order to keep the content up to date.\\
+\textbf{Priority}: Should Have \\
+\textbf{Dependencies}: CAR4\\
+
+\textbf{CAR6: Delete Slide}\\
+\textbf{Description}: The admin users must be able to delete a slide.\\ 
+\textbf{Rationale}: The admin users must be able to remove a slide from the application. This means that selected slide will no longer be available in the application.\\
+\textbf{Priority}: Must have\\
+\textbf{Dependencies}: CAR4\\
+
+\textbf{CAR7: Add Question}\\
+\textbf{Description}: The admin users must be able to add questions to the application. \\
+\textbf{Rationale}: The admin users must be able to create new questions and add them to the application, allowing the students to test how much they have learned.\\
+\textbf{Priority}: Must Have\\
+
+\textbf{CAR8: Edit Question}\\
+\textbf{Description}: The admin users should be able to edit questions.\\
+\textbf{Rationale}: The admin users should be able to edit questions. The users should be able to update the questions to keep the questions up to date or to fix error.\\
+\textbf{Priority}: Should Have \\
+\textbf{Dependencies}: CAR7\\
+
+\textbf{CAR9: Delete Question}\\
+\textbf{Description}: The admin user must be able to delete questions. \\
+\textbf{Rationale}:  The admin user must be able to remove questions from the application. This will mean that the question is no longer available on the application for the students to view.\\
+\textbf{Priority}: Must have\\
+\textbf{Dependencies}: CAR7\\
+
+\section{Non-Functional Requirements}
+
+\end{document}
