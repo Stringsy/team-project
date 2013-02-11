@@ -18,3 +18,4 @@ class Question(models.Model):
 class Slide(models.Model):
 	sTopic = models.ForeignKey(Topic)
 	image =models.ImageField(upload_to='slides')
+

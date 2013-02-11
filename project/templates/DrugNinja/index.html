@@ -1,14 +1,46 @@
 <HTML>
-<HEADER><TITLE>RangoTang</TITLE></HEADER>
+<HEADER><TITLE>Drug Ninja</TITLE></HEADER>
+<h1>
+Drug Ninja
+</h1>
+<h2> Project --- Under Construction --- </h2>
+<h2/>
+<h3> *************************************************************************************************</h3>
+<h3> Development Area aka Playground</h3>
+<h3> *************************************************************************************************</h3>
 <BODY>
-rango says: Hello World!
+{% if slide_list %}
+        <UL>
+        {% for slide in slide_list %}
+                <LI>{{ slide.image }}</LI>
+        {% endfor %}
+        </UL>
+{% else %}
+        <P>No slides at present.</P>
+{% endif %}
+<p/>
+
+{% if question_list %}
+        <UL>
+        {% for question in question_list %}
+                <LI>{{ question }}</LI>
+                <script type="text/javascript">
+						var a="{{question.qTopic}}"; 
+						if (a=="Topic 2")
+							document.write("FUCK YEAH");
+						else
+							document.write("hell fucking no");
+				</script>
+        {% endfor %}
+        </UL>
+{% else %}
+        <P>No questions at present.</P>
+{% endif %}
+
 <br>
+
 <a href="http://127.0.0.1:8000/rango/about.html">Yahoo</a>
-<IMG SRC="{{ STATIC_URL }}imgs/leifos.jpg"/>
-<br>
-<IMG SRC="{{ STATIC_URL }}imgs/pineapple.jpg" width="200" height="250"/>
+
 </BODY>
 </HTML>
-
-
 
