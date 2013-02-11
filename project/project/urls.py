@@ -6,7 +6,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', include('DrugNinja.urls')),
+    url(r'^$', 'DrugNinja.views.underconstruction'),
+    url(r'^dev', 'DrugNinja.views.dev'),
     # url(r'^project/', include('project.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
