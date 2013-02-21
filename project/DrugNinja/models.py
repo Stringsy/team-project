@@ -19,3 +19,11 @@ class Slide(models.Model):
 	sTopic = models.ForeignKey(Topic)
 	image =models.ImageField(upload_to='slides')
 
+	def delete(self, *args, **kwargs):
+		#You have to prepare what you need before delete the model
+	        storage = self.image.storage
+		path = self.image.path
+		# Delete the model before the file
+		super(Slide, self).delete(*args, **kwargs)
+		# Delete the file after the model
+		storage.delete(path)
