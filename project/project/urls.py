@@ -8,7 +8,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'DrugNinja.views.underconstruction'),
     url(r'^dev', 'DrugNinja.views.dev'),
-    # url(r'^project/', include('project.foo.urls')),
+    url(r'^index', 'DrugNinja.views.index'),
+	# url(r'^project/', include('project.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
