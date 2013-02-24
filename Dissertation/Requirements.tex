@@ -34,7 +34,7 @@ There are a few similar tools and learning resources available for vet students.
 \end{figure}
 
 
-The NHS Adult Drug Calculations, a smartphone based learning tool, allows the user to browse through different topics. Within each topic, there are a few slides providing the user with the information and theory, and then has "Check your knowledge" slides containing multiple choice questions to test the user on what they have learned.
+The NHS Adult Drug Calculations, a smartphone based learning tool, allows the user to browse through different topics. Within each topic, there are a few slides providing the user with the information and theory, and then has "Check your knowledge" slides containing multiple choice questions to test the user on what they have learned. The interface is very simple and easy to use. The main menu allows the user to simply select which topic they want to go through. Within each topic, there are arrows on each page which allow the user to navigate back and forward between the pages and there are breadcrumbs on the bottom of each page indicating how far through the topic they are.  There is also an arrow at the top left-hand corner to allow the user to return to the main menu at any point. One feature which is particularly useful to new users is the help button, which informs the user how to use the application. This application is very similar to the application which our client would like for the vet students.
 
 \subsection{Vet Calculator}
 
@@ -50,7 +50,7 @@ The NHS Adult Drug Calculations, a smartphone based learning tool, allows the us
 \endminipage
 \end{figure}
 
-The Vet Calculator, an android based tool, allows the user to enter the necessary details - weight, dose, formulation, volume of fluid, etc. and the produces the result for the user.
+The Vet Calculator, an android based tool, allows the user to enter the necessary details - weight, dose, formulation, volume of fluid, etc. and the produces the result for the user. The interface for the vet calculator is very simple and easy to use. The menu is a simple grid-layout of different topics and sections for drug calculations. Within each topic, the user has to simply enter the necessary details into the clearly labelled text boxes and click 'Calculate' in order to get the result of the calcuation. On each page, there is a home button which will esily allow the user to return to the main menu at any point. This application is useful for users who simply need to get the results of a calculation. However, out client wants an application that can teach the students how to carry out the calculations and not simply produce the result for them as they will need to know how to carry out these calculations throughout their career.
 
 \subsection{Bitesize}
 
@@ -58,7 +58,18 @@ ROSS TO DO!
 
 \section{Client Interview}
 
-In October, we met with our client, Fiona Dowell, 
+The project was proposed by Dr Fiona Dowell, a senior lecturer at the University of Glasgow School of Veterinary Medicine. Initially, we met with Fiona at the beginning of October in order to gain more informatoin about the requirements and specification for the application to ensure that we produced an application relevant to what the client wanted.\\
+Our initial requirements for the vet application were :
+
+\begin{itemize}
+\item A learning application for vet students, providing step-by-step tutorials for different sections of the vet course.
+\item Simple example questions within each topic to test how much the user is learning about that specific section.
+\item A large assessment at the end of all sections to test users on all the content within the application.
+\end{itemize}
+
+After our initial meeting with the client, we thought that it would be useful for the content within the application to be able to be updated - if the content changed, to fix errors or update to include different questions. We presented this idea to the client and she agreed that this would be a useful as it might be good to be able to update after some user feedback. The functional requirements were then updated to include an administration system.\\
+The administration system allows admin staff to upload and remove topics. It also allows the content of each topic to be updated, slides and questions can be added and removed.
+
 
 \section{Functional Requirements}
 
@@ -98,11 +109,10 @@ In October, we met with our client, Fiona Dowell,
 \hline CAR2 & Edit Topic\\
 \hline CAR3 & Delete Topic\\
 \hline CAR4 & Add Slide\\
-\hline CAR5 & Edit Slide\\
-\hline CAR6 & Delete Slide\\
-\hline CAR7 & Add Questions\\
-\hline CAR8 & Edit Questions\\
-\hline CAR9 & Delete Questions\\
+\hline CAR5 & Delete Slide\\
+\hline CAR6 & Add Questions\\
+\hline CAR7 & Edit Questions\\
+\hline CAR8 & Delete Questions\\
 \hline 
 \end{tabular}
 \end{center}
@@ -123,6 +133,8 @@ In October, we met with our client, Fiona Dowell,
 {C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/UserAdmin.png}
 \end{center}
 \begin{center} User Admin \end{center}
+
+\textbf{FIX THIS TO REMOVE EDIT SLIDE}
 
 \begin{center}
 \includegraphics
@@ -202,34 +214,28 @@ In October, we met with our client, Fiona Dowell,
 \textbf{Rationale}: The admin users must be able to add new slides to the application. This will provide the content for the students to browse through. \\
 \textbf{Priority}: Must Have\\
 
-\textbf{CAR5: Edit Slide}\\
-\textbf{Description}: The admin users should be able to edit a slide.\\
-\textbf{Rationale}:  The admin users should be able to edit a current slide stored in the application. The user should be able to change individual slides in order to keep the content up to date.\\
-\textbf{Priority}: Should Have \\
-\textbf{Dependencies}: CAR4\\
-
-\textbf{CAR6: Delete Slide}\\
+\textbf{CA56: Delete Slide}\\
 \textbf{Description}: The admin users must be able to delete a slide.\\ 
 \textbf{Rationale}: The admin users must be able to remove a slide from the application. This means that selected slide will no longer be available in the application.\\
 \textbf{Priority}: Must have\\
 \textbf{Dependencies}: CAR4\\
 
-\textbf{CAR7: Add Question}\\
+\textbf{CAR6: Add Question}\\
 \textbf{Description}: The admin users must be able to add questions to the application. \\
 \textbf{Rationale}: The admin users must be able to create new questions and add them to the application, allowing the students to test how much they have learned.\\
 \textbf{Priority}: Must Have\\
 
-\textbf{CAR8: Edit Question}\\
+\textbf{CAR7: Edit Question}\\
 \textbf{Description}: The admin users should be able to edit questions.\\
 \textbf{Rationale}: The admin users should be able to edit questions. The users should be able to update the questions to keep the questions up to date or to fix error.\\
 \textbf{Priority}: Should Have \\
-\textbf{Dependencies}: CAR7\\
+\textbf{Dependencies}: CAR6\\
 
-\textbf{CAR9: Delete Question}\\
+\textbf{CAR8: Delete Question}\\
 \textbf{Description}: The admin user must be able to delete questions. \\
 \textbf{Rationale}:  The admin user must be able to remove questions from the application. This will mean that the question is no longer available on the application for the students to view.\\
 \textbf{Priority}: Must have\\
-\textbf{Dependencies}: CAR7\\
+\textbf{Dependencies}: CAR6\\
 
 \section{Non-Functional Requirements}
 
