@@ -18,44 +18,6 @@
 \chapter{Requirements}
 \label{req}
 
-\section{Investigation of Existing Artifacts}
-
-There are a few similar tools and learning resources available for vetinary students. This section discusses some of the current tools and a few tools which our client, Dr Fiona Dowell, has shown us in order to give us an idea of what she wanted for the application.
-
-\subsection{NHS Adult Drug Calculations}
-
-\begin{figure}[!htb]
-\minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/NHSDrugApp/NHSDrugApp2.png}
-\endminipage\hfill
-\minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/NHSDrugApp/NHSDrugApp4.png}
-\endminipage
-\end{figure}
-
-
-The NHS Adult Drug Calculations, a smartphone based learning tool, allows the user to browse through different topics. Within each topic, there are a number of slides providing the user with the information and theory behind the calculations, and then has a few "Check your knowledge" slides containing multiple choice questions to test the user on what they have read. The interface is very simple and easy to use. The main menu allows the user to simply select which topic they qish to go over. Within each topic, there are arrows on each page which will allow the user to navigate back and forward between the pages and there are breadcrumbs at the bottom of each page indicating how far through the topic they are.  There is also an arrow at the top left-hand corner which will allow the user to return to the main menu at any point. One feature which is particularly useful to new users is the help button, which informs the user how to use the application. This application is very similar to the application which our client would like for the vetinary students.
-
-\subsection{Vet Calculator}
-
-\begin{figure}[!htb]
-\minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp1.png}
-\endminipage\hfill
-\minipage{0.32\textwidth}
-  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp3.png}
-\endminipage\hfill
-\minipage{0.32\textwidth}%
-  \includegraphics[width=\linewidth]{C:/Users/Nicole/Documents/GitHub/team-project/Dissertation/images/VetCalcApp/VetCalcApp4.png}
-\endminipage
-\end{figure}
-
-VetCalc is an android based tool which allows the user to enter the necessary details, such as weight; dose; formulation; volume of fluid; etc. and will produce the result for the user. The interface for the vet calculator is very simple and easy to use. The menu is a simple grid-layout of different topics and sections for drug calculations. Within each topic, the user has to simply enter the necessary details into the clearly labelled text boxes and click 'Calculate' in order to get the result of the calcuation. On each page, there is a home button which will easily allow the user to return to the main menu at any point. This application is useful for users who simply need to get the results of a calculation. However, out client wants an application that will teach the students how to carry out the calculations and not simply produce the result for them as they will need to know how to carry out these calculations throughout their career.
-
-\subsection{Bitesize}
-
-ROSS TO DO!
-
 \section{Client Interview}
 
 The project was proposed by Dr Fiona Dowell, a senior lecturer at the University of Glasgow School of Veterinary Medicine. Initially, we met with Dr Fiona Dowell in order to gain more information about the requirements and specification for the application to ensure that we produced an application relevant to what the client wanted.\\
@@ -74,6 +36,12 @@ The administration system allows admin staff to upload and remove topics. It als
 \section{Functional Requirements}
 
 \subsection{Requirements Table}
+
+\textbf{Student -} Uses the application to browse through the different topics, answering the sample questions as they go along and completing the assessment at the end of all topics.
+
+\textbf{User Admin -} Responsible for adding new users to the system, setting their permissions to determine their access levels and deleting them when necessay.
+
+\textbf{Content Admin -} Responsible for adding new topics, slides and questions to the system, and ensuring that all content is kept up to date with the course content.
 
 \textbf{Student}\\
 
@@ -239,11 +207,19 @@ The administration system allows admin staff to upload and remove topics. It als
 
 \section{Non-Functional Requirements}
 
-\textbf{Availability:}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \textbf{ID} & \textbf{Non-functional Requirement}\\
+\hline NFR1 & Availability\\
+\hline NFR2 & Performance\\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{ NFR1 - Availability:}
 As our application is a web-based application, it is important that it is available at all times. \\
 
-\textbf{ Performance:}
+\textbf{NFR2 - Performance:}
 Performance is an important part of the usability of our application. Our application should be able to load content from the database and display it within our application in a short amount of time. Failure to do so may result in the application being an inefficient and ineffective learning tool.\\
-
 
 \end{document}
