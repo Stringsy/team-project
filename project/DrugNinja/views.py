@@ -26,7 +26,15 @@ def index(request):
 	slide_list = Slide.objects.all()
 	for slide in slide_list:
 		slide.url = slide.image
-	context = RequestContext(request, {'slide_list':slide_list})
+	topic_list = Topic.objects.filter(id=1)
+	for topic in topic_list:
+		topic_name = topic.title
+		topic.url = encode_topic(topic_name)
+	context = RequestContext(request, {'slide_list':slide_list,'topic_list':topic_list})
 	return HttpResponse(template.render(context))
 
+def encode_topic(topic_name):
+	return topic_name.replace(' ','_')
 
+def decode_topic(topic_url):
+	return topic_url.replace('_',' ')
