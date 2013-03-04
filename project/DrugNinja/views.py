@@ -36,7 +36,6 @@ def topic(request, topicnum):
 	return HttpResponse(template.render(context))
 
 def index(request):
-	
 	return HttpResponseRedirect("/topic/1")
 
 
