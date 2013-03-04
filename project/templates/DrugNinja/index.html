@@ -1,127 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap 101 Template</title>
+    <title>DrugCalc</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
-	<script src="http://code.jquery.com/jquery.js"></script>
+	
+    <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-<div class="row-fluid">
-  <div class="span12">
-<div class="row-fluid"> <div class="span12"></div></div>
+	<script src="{{ STATIC_URL }}js/bootstrap-ajax.js"></script>
 	<div class="row-fluid">
-	  <div class="span0.5"></div>
-	  <div class="span4"><img src="{{ STATIC_URL}}img/logo.gif"></div>	
-     
-	</div>
-<div class="row-fluid"> <div class="span12"></div></div>
-	<div class="row-fluid">
-		<ul class="breadcrumb">
- <div class="span1"></div>
-  <li><a href="#">Home</a> <span class="divider">/</span></li>
-  <li><a href="#">Library</a> <span class="divider">/</span></li>
-  <li><a href="/admin">Administration</a> <span class="divider">/</span></li>
-  <li class="active">Data</li>
-</ul>
-	</div>
-        <div class="row-fluid">
- 	<div class="span2">
- 	
-	</div>
-
-      <div class="span6">
-       <p class="text-center">
-
-
-     {%for topic in topic_list %}
-
-    <a href="/topic/{{topic.id|add:"-1"}}">Previous Topic </a>
-    <label><strong>  {{topic}}    </strong></label>
-    <a href="/topic/{{topic.id|add:"1"}}">Next Topic</a>
-
-{% endfor %}
-    </p>
-        
-      </div>
-	<div class="span3">
-	 
-	</div>
-<div>
-<div class="row-fluid">
-	<div class="span1">
-	</div>
-	<div class="span8">
- 	<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-  {% for slide in slide_list %}
-  	
-	<li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
-{% endfor %}
-    
-    
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-
-<div class="active item"><img src="http://www.osha.gov/dte/library/radiation/nir_stds_20021011/slide118.jpg" alt=""></div>
-	{% for slide in slide_list %}
-<div class="item"><img src="{{ STATIC_URL }}{{ slide.url }}"alt=""></div>
-
-	{% endfor %}
-
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
-<script>
-$('.carousel').carousel({
-  interval: false
-})
-</script>
-	</div>
-	<div class="span3">
- <div class="well">
-<div class="pagination">
-  <ul>
-    <li><a href="#">Prev</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-
-    <li><a href="#">Next</a></li>
-  </ul>
-</div>
- 	<label class="checkbox">
-  <input type="checkbox" value="">
-  Option one is this and that—be sure to include why it's great
-</label>
- 
-<label class="radio">
-  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-  Option one is this and that—be sure to include why it's great
-</label>
-<label class="radio">
-  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-  Option two can be something else and selecting it will deselect option one
-</label>
-{% if topic_list %}
-{% for topic in topic_list %}
-        <LI><A HREF="/rango/cat/{{topic.url}}">{{topic.name}}</A></LI>
-     {% endfor %}
-{% else %}
-        <h1> HELLO </h1>
-{% endif %}
-</div>
-	</div>
-
-</div>
-  </div>
-</div>
+	  <div class="span12">
+		
+		<div class="row-fluid"> <div class="span12"></div></div>
+		<div class="row-fluid">
+		  <div class="span0.5"></div>
+		  <div class="span4"><img src="{{ STATIC_URL}}img/logo.gif"></div>	
+		  
+		  
+		</div>
+		<div class="row-fluid"><div class="para1"></div></div>
+		<div class="row-fluid">
+		  <ul class="breadcrumb">
+			<div class="span1"></div>
+			<li><a href="/index/">Home</a> <span class="divider">/</span></li>
+			<li><a href="/admin/">Administration</a> <span class="divider">/</span></li>
+			<li href="/topic/1/" class="active">Learning</li>
+		  </ul>
+		</div>
+		
+		<div class="row-fluid">
+		  <div class="span1"></div>
+		  <div class="span10">
+			<div class="hero-unit">
+			  <h1>Drug calculation tutorials</h1>
+			  <p>are designed as its name states, EETS was begun as a 'club', and it retains certain features of that even now. It has no physical location, or even office, no paid staff or editors, but books in the Original Series are published in the first place to satisfy subscriptions paid by individuals or institutions. This means that there is need for a regular sequence of new editions, normally one or two per year; achieving that sequence can pose problems for the Editorial Secretary, who may have too few or too many texts ready for publication at any one time. Details on a separate sheet explain how individual (but not institutional) members can choose to take certain back volumes in place of the newly published volumes against their subscriptions. On the same sheet are given details about the very advantageous discount available to individual members on all back numbers. In 1970 a Supplementary Series was begun, a series which only appears occasionally (it currently has 24 volumes within it); some of these are new editions of texts earlier appearing in the main series. Again these volumes are available at publication and later at a substantial discount to members. All these advantages can only be obtained through the Membership Secretary (the books are sent by post); they are not available through bookshops, and such bookstores as carry EETS books have only a very limited selection of the many published.</p>
+			  <p>
+				<a href="/topic/1" class="btn btn-primary btn-large">
+				  Learn drug calculations
+				</a>
+			  </p>
+			</div>
+		  </div>
+		  
+		</div>
   </body>
 </html>

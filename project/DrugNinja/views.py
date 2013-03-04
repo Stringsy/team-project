@@ -22,6 +22,7 @@ def dev(request):
         context = RequestContext(request, {'topic_list': topic_list, 'question_list': question_list,'slide_list': slide_list})
         # render the template using the provided context and return as http response.
         return HttpResponse(template.render(context))
+        
 def topic(request, topicnum):
 	template=loader.get_template('DrugNinja/topic.html')
 	context_dict= {'topic_id':topicnum}
@@ -36,8 +37,9 @@ def topic(request, topicnum):
 	return HttpResponse(template.render(context))
 
 def index(request):
-	
-	return HttpResponseRedirect("/topic/1")
+	template=loader.get_template('DrugNinja/index.html')
+	context = RequestContext(request, {})
+        return HttpResponse(template.render(context))
 
 
 def encode_topic(topic_name):
