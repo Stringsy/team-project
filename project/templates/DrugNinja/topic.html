@@ -87,29 +87,29 @@
 			  </div>
 			  <div class="span3">
 				<div class="well">
-				  <div class="pagination">
-					<ul>
-					  <li><a href="#">Prev</a></li>
-					  <li><a href="#">1</a></li>
-					  <li><a href="#">2</a></li>
-					  <li><a href="#">3</a></li>
-					  
-					  <li><a href="#">Next</a></li>
-					</ul>
-				  </div>
- 				  <label class="checkbox">
-					<input type="checkbox" value="">
-					Option one is this and that—be sure to include why it's great
-				  </label>
-				  
-				  <label class="radio">
-					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-					Option one is this and that—be sure to include why it's great
-				  </label>
-				  <label class="radio">
-					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-					Option two can be something else and selecting it will deselect option one
-				  </label>
+					{% for question in question_list %}
+					{{topic}}
+					<label>{{question}}</label>
+<input id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					</br>
+						<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
+<script>
+	$(document).ready(function() {
+		$('#{{question.id}}ans').click(function(){
+			$.get('/validate_answer/{{question.id}}/'+$("#text{{question.id}}").val(), function(data){
+				$('#{{question.id}}ans').html(data);
+			});
+		});
+	});
+	
+</script>	
+<a id="{{question.id}}ans" class="btn btn-primary btn-small">
+      Submit Answer</a>					
+	  </br>
+					{% endfor %}
+
+      <br/><br/>
+				 </label>
 				  
 				</div>
 			  </div>

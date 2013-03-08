@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^dev', 'DrugNinja.views.dev'),
     url(r'^index', 'DrugNinja.views.index'),
 	url(r'^topic/(?P<topicnum>\w+)', 'DrugNinja.views.topic'),
+	url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\w+)', 'DrugNinja.views.validate'),
 	# url(r'^project/', include('project.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

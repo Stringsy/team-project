@@ -3,7 +3,8 @@ from django.template import RequestContext, loader
 from DrugNinja.models import Topic, Slide, Question
 from django.db import models
 from django.http import HttpResponseRedirect
-
+from django.utils import simplejson
+from django.shortcuts import render_to_response
 
 def underconstruction(request):
         # select the appropriate template to use
@@ -22,7 +23,15 @@ def dev(request):
         context = RequestContext(request, {'topic_list': topic_list, 'question_list': question_list,'slide_list': slide_list})
         # render the template using the provided context and return as http response.
         return HttpResponse(template.render(context))
-        
+  
+def validate(request, question, answer):
+	dbquestion=Question.objects.get(id=question)
+	dbanswer=dbquestion.answer
+	if answer==dbanswer:
+		return HttpResponse("Correct Answer")
+	else:
+		return HttpResponse("Wrong Answer")
+	
 def topic(request, topicnum):
 	template=loader.get_template('DrugNinja/topic.html')
 	context_dict= {'topic_id':topicnum}
@@ -32,7 +41,9 @@ def topic(request, topicnum):
 		slide_list=Slide.objects.filter(sTopic=topic)
 		for slide in slide_list:
 			slide.url=slide.image
+		question_list=Question.objects.filter(qTopic=topic)
 		context_dict['slide_list']=slide_list
+		context_dict['question_list']=question_list
 	context = RequestContext(request, context_dict)
 	return HttpResponse(template.render(context))
 
