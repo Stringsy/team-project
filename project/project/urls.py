@@ -9,8 +9,11 @@ urlpatterns = patterns('',
     url(r'^$', 'DrugNinja.views.underconstruction'),
     url(r'^dev', 'DrugNinja.views.dev'),
     url(r'^index', 'DrugNinja.views.index'),
+	url(r'^final', 'DrugNinja.views.final'),
 	url(r'^topic/(?P<topicnum>\w+)', 'DrugNinja.views.topic'),
 	url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\w+)', 'DrugNinja.views.validate'),
+	url(r'^validate_final_answer/(?P<question>\w+)/(?P<answer>\d+\.\d+)', 'DrugNinja.views.validatefinal'),
+		url(r'^validate_final_answer/(?P<question>\w+)/(?P<answer>\w+)', 'DrugNinja.views.validatefinal'),
 	# url(r'^project/', include('project.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>DrugCalc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-	<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-	<div class="row-fluid">
-	  <div class="span12">
-		<div class="row-fluid"> <div class="span12"></div></div>
-		<div class="row-fluid">
-		  <div class="span0.5"></div>
-		  <div class="span4"><img src="{{ STATIC_URL}}img/logo.gif"></div>	
-		  
-		</div>
-		<div class="row-fluid"> <div class="span12"></div></div>
-		<div class="row-fluid">
-		  <ul class="breadcrumb">
-			<div class="span1"></div>
-			<li><a href="/index">Home</a> <span class="divider">/</span></li>
-			<li><a href="/admin">Administration</a> <span class="divider">/</span></li>
-			<li class="active">Learning</li>
-		  </ul>
-		</div>
-        <div class="row-fluid">
- 		  <div class="span2">
- 			
-		  </div>
-		  
+{% extends 'DrugNinja/base.html' %}
+{% block content %}
+       <div class="row-fluid">
+
+		  <!--
 		  <div class="span6">
 			<p class="text-center">
 			  
@@ -44,34 +16,44 @@
 			  
 			</p>
 			
-		  </div>
-		  <div class="span3">
+		  </div>-->
+		   <div class="span6 offset5">
+       <p class="text-center">
+<h4>
+    <a href="/topic/{{topic.id|add:"-1"}}"">Prev   </a>
+   <strong>   &#32;&#32;{{topic}}&#32;&#32;      </strong>
+    <a href="/topic/{{topic.id|add:"1"}}">Next   </a>
+</h4>
+    </p>
+        
+      </div>
+		  <div class="span1">
 			
 		  </div>
-		  <div>
+	
+
 			<div class="row-fluid">
 			  <div class="span1">
 			  </div>
-			  <div class="span8">
+			  <div class="span6">
  				<div id="myCarousel" class="carousel slide">
 				  <ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
 					{% for slide in slide_list %}
-  					
-					<li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
+					<li data-target="#myCarousel" data-slide-to="{{forloop.counter}}"></li>
 					{% endfor %}
-					
-					
-					<li data-target="#myCarousel" data-slide-to="2"></li>
 				  </ol>
 				  <!-- Carousel items -->
 				  <div class="carousel-inner">
 					
-					<div class="active item"><img src="http://media.merchantcircle.com/32094974/new%20welcome%20banner%202_full.png" alt=""></div>
-					
+					<!--<div class="active item"><img src="http://media.merchantcircle.com/32094974/new%20welcome%20banner%202_full.png" alt=""></div>
+					<div class="active item"><img src="http://i.telegraph.co.uk/multimedia/archive/02371/karen-ann-jones_2371086k.jpg" alt=""></div>-->
 					{% for slide in slide_list %}
+					‎{%if forloop.first%}
+					<div class="active item"><img src="{{ STATIC_URL }}{{ slide.url }}"alt=""></div>
+					{%else%}
 					<div class="item"><img src="{{ STATIC_URL }}{{ slide.url }}"alt=""></div>
-					
+					{%endif%}
 					{% endfor %}
 					
 				  </div>
@@ -84,13 +66,29 @@
 				  interval: false
 				  })
 				</script>
+				<!--
+<script>
+$(document).ready(function(){
+var numItems = $('.active item').length
+if (numItems>1){
+$(".active item").first().toggleClass('.item');
+}
+else{
+$(".item").first().toggleClass('.active item');
+}
+});-->
+
+</script>
 			  </div>
-			  <div class="span3">
+			  <div class="spanu">
 				<div class="well">
-					{% for question in question_list %}
-					{{topic}}
+<strong>{{topic}} Questions</strong>
+<br/>
+<br/>
+{% for question in question_list %}
+					
 					<label>{{question}}</label>
-<input id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					</br>
+<input id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					
 						<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
 </script>
 <script>
@@ -101,21 +99,25 @@
 			});
 		});
 	});
-	
+
 </script>	
-<a id="{{question.id}}ans" class="btn btn-primary btn-small">
+<a id="{{question.id}}ans" class="btn btn-small">
       Submit Answer</a>					
-	  </br>
+	  </br></br>
 					{% endfor %}
 
-      <br/><br/>
-				 </label>
 				  
 				</div>
 			  </div>
 			  
 			</div>
 		  </div>
-		</div>
-  </body>
-</html>
+		  <br>
+		  <br>
+		   <br>
+		  <br>
+		   <br>
+		  <br>
+		  <hr>
+{% endblock %}
+

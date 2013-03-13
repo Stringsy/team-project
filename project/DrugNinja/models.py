@@ -16,6 +16,13 @@ class Question(models.Model):
  	def __unicode__(self):
  		return self.text
 
+class FinalTestQuestion(models.Model):
+	text = models.CharField(max_length=2000)
+ 	answer = models.CharField(max_length=100)
+ 	def __unicode__(self):
+ 		return self.text
+
+
 class Slide(models.Model):
 	sTopic = models.ForeignKey(Topic)
 	image =models.ImageField(upload_to='slides')

@@ -1,0 +1,12 @@
+.para1
+{
+height:10px;
+text-align:center;
+color:red;
+}
+.para2
+{
+height:100%;
+background-color: #007A85;
+}
+body,html{background-color: #007A85;}

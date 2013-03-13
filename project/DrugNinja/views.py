@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from DrugNinja.models import Topic, Slide, Question
+from DrugNinja.models import Topic, Slide, Question, FinalTestQuestion
 from django.db import models
 from django.http import HttpResponseRedirect
 from django.utils import simplejson
@@ -12,7 +12,17 @@ def underconstruction(request):
         #Put the data into the context
         context = RequestContext(request, {})
         return HttpResponse(template.render(context))
+
+def final(request):
+        # select the appropriate template to use
+        template = loader.get_template('DrugNinja/finalAssessment.html')
+        questions=FinalTestQuestion.objects.all().order_by('?')[:10]
         
+        #Put the data into the context
+        context = RequestContext(request, {'questions':questions})
+        return HttpResponse(template.render(context))
+
+
 def dev(request):
         # select the appropriate template to use
         template = loader.get_template('DrugNinja/dev.html')
@@ -31,7 +41,15 @@ def validate(request, question, answer):
 		return HttpResponse("Correct Answer")
 	else:
 		return HttpResponse("Wrong Answer")
-	
+
+def validatefinal(request, question, answer):
+	dbquestion=FinalTestQuestion.objects.get(id=question)
+	dbanswer=dbquestion.answer
+	if answer==dbanswer:
+		return HttpResponse("Your answer was correct!")
+	else:
+		return HttpResponse("Your answer was wrong!")
+
 def topic(request, topicnum):
 	template=loader.get_template('DrugNinja/topic.html')
 	context_dict= {'topic_id':topicnum}

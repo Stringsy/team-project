@@ -1,4 +1,4 @@
-from DrugNinja.models import Topic, Slide, Question
+from DrugNinja.models import Topic, Slide, Question, FinalTestQuestion
 from django.db import models
 from django.contrib import admin
 
@@ -18,3 +18,4 @@ class DrugAdmin(admin.ModelAdmin):
 	inlines = [SlideInline, QuestionInline]
 
 admin.site.register(Topic, DrugAdmin)
+admin.site.register(FinalTestQuestion)

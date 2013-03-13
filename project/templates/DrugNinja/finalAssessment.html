@@ -1,0 +1,75 @@
+{% extends 'DrugNinja/base.html' %}
+
+{% block content %}
+<style>
+p.hidden {visibility:hidden;}
+</style>
+
+	  <div class="span10">
+<div class="progress vertical progress-info">
+  <div class="bar" style="width: 100%;background-color:red">Animal Life </div>
+</div>
+<center>
+<img id=animal border="1" src="{{STATIC_URL}}/img/136317103293.jpg" alt="Pulpit rock" width="304" height="228">
+
+
+</center>
+
+		  {% for question in questions %}
+		   <div class="well" >
+		  <label>Question {{question.id}}) {{question|linebreaks}}</label>
+		  <input style="width: 60%;" id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					
+		  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+		  </script>
+		  <script>
+			$(document).ready(function() {
+			$('#{{question.id}}ans').click(function(){
+			$.get('/validate_final_answer/{{question.id}}/'+$("#text{{question.id}}").val(), function(data){
+			var $bar = $('.bar');
+			document.getElementById('{{question.id}}ans').style.visibility='hidden';
+			document.getElementById('{{question.id}}feedback').style.visibility='';
+			var score = +document.getElementById('lbltipAddedComment').innerHTML;
+
+			$('#{{question.id}}feedback').html(data);
+			var i = document.getElementById('{{question.id}}feedback').innerHTML;
+			
+			if (i=="Your answer was wrong!"){
+			$bar.width($bar.width()-120);
+			if($bar.width()<300){
+				document.getElementById('animal').src='{{STATIC_URL}}img/03_12 rodney.gif';
+				alert("You have killed your animal!")
+			}
+			else if($bar.width()<600)
+				document.getElementById('animal').src='{{STATIC_URL}}img/shrek-the-halls-sad-donkey.jpg';
+				
+			}else{ 
+			document.getElementById('lbltipAddedComment').innerHTML = score+10;
+			}
+			var questionsAnswered= +document.getElementById('questionsAnswered').innerHTML;
+			if (questionsAnswered==9){
+			document.getElementById('showCorrectAnswers').style.visibility='';
+			{% for question in questions %}
+			document.getElementById('{{question.id}}feedback').innerHTML = "The correct answer was {{question.answer}}"
+			{% endfor %}
+			}else
+			document.getElementById('questionsAnswered').innerHTML = questionsAnswered+1;	
+			});
+			});
+			});
+			
+		  </script>	
+		  <a id="{{question.id}}ans" class="btn btn-small">
+			Submit Answer</a>
+			<div id="{{question.id}}feedback" style="visibility:hidden;" class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Warning!</strong> Best check yo self, you're not looking too good.
+</div>				
+	    			</div>
+	  {% endfor %}
+<p>
+<strong class="lead"> Current Score: </strong>
+<strong id="lbltipAddedComment">0</strong>
+<strong> / 100 </strong></p><input id="showCorrectAnswers" style="visibility:hidden;" type="button" value="Reveal Correct!" disabled>
+<a id="questionsAnswered" style="visibility:hidden;">0</a>
+{% endblock %}
+

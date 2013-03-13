@@ -1,35 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>DrugCalc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-	
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-	<script src="{{ STATIC_URL }}js/bootstrap-ajax.js"></script>
-	<div class="row-fluid">
-	  <div class="span12">
-		
-		<div class="row-fluid"> <div class="span12"></div></div>
-		<div class="row-fluid">
-		  <div class="span0.5"></div>
-		  <div class="span4"><img src="{{ STATIC_URL}}img/logo.gif"></div>	
-		  
-		  
-		</div>
-		<div class="row-fluid"><div class="para1"></div></div>
-		<div class="row-fluid">
-		  <ul class="breadcrumb">
-			<div class="span1"></div>
-			<li class="active"><a href="/index/">Home</a> <span class="divider">/</span></li>
-			<li><a href="/admin/">Administration</a> <span class="divider">/</span></li>
-			<li><a href="/topic/1/">Learning</a></li>
-		  </ul>
-		</div>
+{% extends 'DrugNinja/base.html' %}
+
+{% block content %}
 		
 		<div class="row-fluid">
 		  <div class="span1"></div>
@@ -48,3 +19,4 @@
 		</div>
   </body>
 </html>
+{% endblock %}
