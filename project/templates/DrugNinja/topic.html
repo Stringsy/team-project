@@ -40,6 +40,7 @@
 			  <div class="span1">
 			  </div>
 			  <div class="span6">
+			  {% if slide_list %}
  				<div id="myCarousel" class="carousel slide">
 				  <ol class="carousel-indicators">
 
@@ -83,12 +84,16 @@ $(".item").first().toggleClass('.active item');
 });-->
 
 </script>
+{% else %}
+<h1> No slides for this topic! </h1>
+{% endif %}
 			  </div>
 			  <div class="spanu">
 				<div class="well">
 <strong>{{topic}} Questions</strong>
 <br/>
 <br/>
+{% if question_list %}
 {% for question in question_list %}
 					
 					<label>{{question}}</label>
@@ -109,6 +114,9 @@ $(".item").first().toggleClass('.active item');
       Submit Answer</a>					
 	  </br></br>
 					{% endfor %}
+					{% else %}
+					<label> No Questions for this topic! </label>
+					{% endif %}
 
 				  
 				</div>

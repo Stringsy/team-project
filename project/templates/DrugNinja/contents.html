@@ -1,0 +1,13 @@
+{% extends 'DrugNinja/base.html' %}
+
+{% block content %}
+<div class="span10">
+<h1> Contents </h1>
+{% if topics %}
+{% for topic in topics %}
+<li><a href="/topic/{{topic.id}}"><h3>{{topic}}</h3></a></li>
+{% endfor %}
+{% else %}
+<h3> No topics in database <h3>
+{% endif %}
+{% endblock %}
