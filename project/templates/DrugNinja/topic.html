@@ -20,12 +20,12 @@
 		   <div class="span6 offset5">
        <p class="text-center">
 <h4>
-	{% if topic.id > 1 %}
-    <a href="/topic/{{topic.id|add:"-1"}}"">Prev   </a>
+	{% if topic != topics|first %}
+    <a href="/topic/{{topicnum|add:"-1"}}"">Prev   </a>
     {% endif %}
    <strong>   &#32;&#32;{{topic}}&#32;&#32;      </strong>
-   {% if topic.id < topicsLength %}
-    <a href="/topic/{{topic.id|add:"1"}}">Next   </a>
+   {% if topic != last %}
+    <a href="/topic/{{topicnum|add:"1"}}">Next   </a>
     {% endif %}
 </h4>
     </p>

@@ -59,9 +59,10 @@ def validatefinal(request, question, answer):
 def topic(request, topicnum):
 	template=loader.get_template('DrugNinja/topic.html')
 	context_dict= {'topic_id':topicnum}
-	topic=Topic.objects.get(id=topicnum)
-	topicsLength=Topic.objects.all().count
-	context_dict= {'topic':topic, 'topicsLength':topicsLength}
+	topics=Topic.objects.all()
+	last=topics[len(topics)-1]
+	topic=topics[int(topicnum)]
+	context_dict= {'topic':topic, 'topics':topics, 'topicnum':topicnum, 'last':last}
 	if topic:
 		slide_list=Slide.objects.filter(sTopic=topic)
 		for slide in slide_list:
