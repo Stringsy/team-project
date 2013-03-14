@@ -22,6 +22,12 @@ def final(request):
         context = RequestContext(request, {'questions':questions})
         return HttpResponse(template.render(context))
 
+def contents(request):
+        template = loader.get_template('DrugNinja/contents.html')
+        topics=Topic.objects.all()
+        #Put the data into the context
+        context = RequestContext(request, {'topics':topics})
+        return HttpResponse(template.render(context))
 
 def dev(request):
         # select the appropriate template to use
