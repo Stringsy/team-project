@@ -54,7 +54,8 @@ def topic(request, topicnum):
 	template=loader.get_template('DrugNinja/topic.html')
 	context_dict= {'topic_id':topicnum}
 	topic=Topic.objects.get(id=topicnum)
-	context_dict= {'topic':topic}
+	topicsLength=Topic.objects.all().count
+	context_dict= {'topic':topic, 'topicsLength':topicsLength}
 	if topic:
 		slide_list=Slide.objects.filter(sTopic=topic)
 		for slide in slide_list:
