@@ -4,11 +4,11 @@ from django.contrib import admin
 
 class SlideInline(admin.StackedInline):
 	model = Slide
-	extra = 0
+	extra = 1
 
 class QuestionInline(admin.StackedInline):
 	model = Question
-	extra = 0
+	extra = 1
 
 class DrugAdmin(admin.ModelAdmin):
 	fieldsets = [

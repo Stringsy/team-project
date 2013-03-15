@@ -5,23 +5,13 @@
 p.hidden {visibility:hidden;}
 </style>
 
-	  <div class="span10">
-<div class="progress progress-striped active">
-  <div class="bar" style="width: 100%;background-color:red">Animal Life </div>
-</div>
-<center>
-<img id=animal border="1" src="{{STATIC_URL}}img/136317103293.jpg" alt="Pulpit rock" width="304" height="228">
-
-
-</center>
-
+	  <div class="span7">
 		  {% for question in questions %}
-		   <div class="well" >
-		  <label>Question {{question.id}}) {{question|linebreaks}}</label>
-		  <input style="width: 60%;" id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					
-		  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
-		  </script>
-		  <script>
+		  <div class="well" >
+		  	<label>Question {{question.id}}){{question|linebreaks}}</label>
+		  	<input style="width: 60%;" id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer{{question.answer}}">					
+		  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		 	<script>
 			$(document).ready(function() {
 			$('#{{question.id}}ans').click(function(){
 			$.get('/validate_final_answer/{{question.id}}/'+$("#text{{question.id}}").val(), function(data){
@@ -34,12 +24,12 @@ p.hidden {visibility:hidden;}
 			var i = document.getElementById('{{question.id}}feedback').innerHTML;
 			
 			if (i=="Your answer was wrong!"){
-			$bar.width($bar.width()-120);
-			if($bar.width()<300){
+			$bar.width($bar.width()-35);
+			if($bar.width()<50){
 				document.getElementById('animal').src='{{STATIC_URL}}img/03_12 rodney.gif';
 				alert("You have killed your animal!")
 			}
-			else if($bar.width()<600)
+			else if($bar.width()<200)
 				document.getElementById('animal').src='{{STATIC_URL}}img/shrek-the-halls-sad-donkey.jpg';
 				
 			}else{ 
@@ -56,20 +46,40 @@ p.hidden {visibility:hidden;}
 			});
 			});
 			});
-			
-		  </script>	
-		  <a id="{{question.id}}ans" class="btn btn-small">
-			Submit Answer</a>
-			<div id="{{question.id}}feedback" style="visibility:hidden;" class="alert">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Warning!</strong> Best check yo self, you're not looking too good.
-</div>				
-	    			</div>
-	  {% endfor %}
+		   </script>	
+		   <a id="{{question.id}}ans" class="btn btn-small">Submit Answer</a>
+		   <div id="{{question.id}}feedback" style="visibility:hidden;" class="alert">
+  				<button type="button" class="close" data-dismiss="alert">&times;</button>
+ 			    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+		   </div>				
+	    </div>
+	    {% endfor %}
+	 </div>
+	 <div class="span4">
+	 	<div class="well" data-spy="affix" data-offset-top="60%">
+	    <div class="progress progress-danger progress-striped">
+
+        <div class="bar bar-danger" style="width: 100%;">Animal Life </div>
+ 
+      </div>
+        <ul class="nav nav-list" >
+          <li>	  <center><img id=animal border="1" src="{{STATIC_URL}}img/136317103293.jpg" alt="Pulpit rock" width="304" height="228"></center></li>
+        </ul><br>
+        <strong class="lead"> Current Score: </strong>
+<strong id="lbltipAddedComment">0</strong>
+<strong> / 100 </strong></p><input id="showCorrectAnswers" style="visibility:hidden;" type="button" value="Reveal Correct!" disabled>
+<a id="questionsAnswered" style="visibility:hidden;">0</a>
+        </div>
+        
+     </div>
+	  
 <p>
+<div class="span12">
 <strong class="lead"> Current Score: </strong>
 <strong id="lbltipAddedComment">0</strong>
 <strong> / 100 </strong></p><input id="showCorrectAnswers" style="visibility:hidden;" type="button" value="Reveal Correct!" disabled>
 <a id="questionsAnswered" style="visibility:hidden;">0</a>
+</div>
+<div class="span12">
 {% endblock %}
 
