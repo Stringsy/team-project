@@ -1,7 +1,8 @@
 {% extends 'DrugNinja/base.html' %}
 
 {% block content %}
-<div class="span10">
+<div class="span0"></div>
+<div class="span11">
 <h1> Contents </h1>
 {% if topics %}
 {% for topic in topics %}
@@ -10,4 +11,7 @@
 {% else %}
 <h3> No topics in database <h3>
 {% endif %}
+
+
+
 {% endblock %}

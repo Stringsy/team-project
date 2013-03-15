@@ -348,6 +348,7 @@ a:focus {
   width: 20px;
 }
 
+
 .offset12 {
   margin-left: 980px;
 }
@@ -394,6 +395,9 @@ a:focus {
 
 .offset1 {
   margin-left: 100px;
+}
+.offset1 {
+  margin-left: 20px;
 }
 
 .row-fluid {
@@ -620,6 +624,16 @@ a:focus {
 .row-fluid .offset1:first-child {
   margin-left: 8.51063829787234%;
   *margin-left: 8.404255319148938%;
+}
+
+.row-fluid .offset0 {
+  margin-left: 2.638297872340425%;
+  *margin-left: 2.53191489361702%;
+}
+
+.row-fluid .offset0:first-child {
+  margin-left: 2.51063829787234%;
+  *margin-left: 2.404255319148938%;
 }
 
 [class*="span"].hide,
@@ -3128,6 +3142,19 @@ table th[class*="span"],
   padding: 19px;
   margin-bottom: 20px;
   background-color: #629081;
+  border: 1px solid #32a1ac;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.pink {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #fb66a5;
   border: 1px solid #32a1ac;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;

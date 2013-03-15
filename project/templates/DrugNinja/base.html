@@ -1,44 +1,47 @@
 {% block base %}
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DrugCalc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="{{ STATIC_URL }}css/bootstrap2.css" rel="stylesheet" media="screen">
-    <link href="{{ STATIC_URL }}css/mycss.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
-  <div class="para2">
-	<script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-	<div class="row-fluid">
-  		
-		<div class="para1"></div>
-	    
-	 <div class="span12">
-	  <div class="span4"><img src="{{ STATIC_URL}}img/logo.jpg" class="img-rounded"></div>
-	</div>	
-<div class="row-fluid">
-<div class="para1"></div>
-</div>
-		<div class="row-fluid">
-		  <ul class="breadcrumb">
-			<div class="span0"></div>
-			<li><a href="/contents">Table of Topics</a> <span class="divider">/</span></li>
-			<li><a href="/final">Final Assessment</a> <span class="divider">/</span></li>
-			<li class="active">Learning</li>
-		  </ul>
-		</div>
-{% endblock %}
-{% block content %}
-{% endblock %}
-<hr>
- <div class="span12">
-        <br>
-        Concept by  <a href="http://thomaspark.me">Dr. Fiona Dowell</a>. Contact her <a href="mailto:fiona@gla.ac.uk">fiona@gla.ac.uk</a><br/>
-        Made by Team V under revision of Dr. Jeremy Singer <br/>
-        Copyright © 2013 University of Glasgow, School of Computing Science
-		</div>
-</body>
+    <head>
+        <title>DrugCalc</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- Bootstrap -->
+            <link href="{{ STATIC_URL }}css/bootstrap2.css" rel="stylesheet" media="screen">
+            <link href="{{ STATIC_URL }}css/mycss.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="para2">
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+            <div class="row-fluid">
+                
+                <div class="para1"></div>
+                </div>
+                  
+                <div class="row-fluid"> 
+                    <div class="span4 offset0"><a href="http://127.0.0.1:8000/index"><img src="{{ STATIC_URL}}img/logo.jpg" class="img-rounded"></div></a>
+                
+                </div>
+                <div class="row-fluid">
+                    <div class="para1"></div>
+                </div>
+                <div class="row-fluid">
+                    <ul class="breadcrumb">
+                        <div class="span0"></div>
+                        <li><a href="/contents">Table of Topics</a> <span class="divider">/</span></li>
+                        <li><a href="/final">Final Assessment</a> <span class="divider">/</span></li>
+                        <li><a href="/admin">Administration</a> <span class="divider">/</span></li>
+                    </ul>
+                </div>
+                
+                {% endblock %}
+                {% block content %}
+                {% endblock %}
+                                <div class="row-fluid">
+<hr></div>
+                <div class="span12">
+                    Concept by  <a href="http://thomaspark.me">Dr. Fiona Dowell</a>. Contact her <a href="mailto:fiona@gla.ac.uk">fiona@gla.ac.uk</a><br/>
+                    Made by Team V under revision of Dr. Jeremy Singer <br/>
+                    Copyright Â© 2013 University of Glasgow, School of Computing Science<br/>
+               </div>
+    </body>
 </html>
