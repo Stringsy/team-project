@@ -45,7 +45,7 @@
 				  <ol class="carousel-indicators">
 
 					{% for slide in slide_list %}
-					<li data-target="#myCarousel" data-slide-to="{{forloop.counter}}"></li>
+					<li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
 					{% endfor %}
 				  </ol>
 				  <!-- Carousel items -->
@@ -110,7 +110,7 @@ $(".item").first().toggleClass('.active item');
 	});
 
 </script>	
-<a id="{{question.id}}ans" class="btn btn-small">
+<a id="{{question.id}}ans" class="btn btn-inverse btn-small">
       Submit Answer</a>					
 	  </br></br>
 					{% endfor %}
@@ -125,11 +125,5 @@ $(".item").first().toggleClass('.active item');
 			</div>
 		  </div>
 		  <br>
-		  <br>
-		   <br>
-		  <br>
-		   <br>
-		  <br>
-		  <hr>
 {% endblock %}
 
