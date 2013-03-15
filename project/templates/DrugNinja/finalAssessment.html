@@ -47,11 +47,8 @@ p.hidden {visibility:hidden;}
 			});
 			});
 		   </script>	
-		   <a id="{{question.id}}ans" class="btn btn-small">Submit Answer</a>
-		   <div id="{{question.id}}feedback" style="visibility:hidden;" class="alert">
-  				<button type="button" class="close" data-dismiss="alert">&times;</button>
- 			    <strong>Warning!</strong> Best check yo self, you're not looking too good.
-		   </div>				
+		   <a id="{{question.id}}ans" class="btn btn-success btn-small">Submit Answer</a>
+		   <div class="danger" id="{{question.id}}feedback" style="visibility:hidden;" ></div>				
 	    </div>
 	    {% endfor %}
 	 </div>
