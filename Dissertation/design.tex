@@ -18,28 +18,63 @@
 \chapter{Design}
 \label{design}
 
-This chapter covers the various aspects of the application's design process. As our project was client-based the design was very much focused on satisfying the requirements laid out in the previous chapter. Fiona Dowell, our client from Glasgow University's Veterinary school, evaluated our initial user interface design and we then revised ir according to the feedback that we received from her. 
+This chapter covers the various aspects of the application's design process. As our project was client-based the design was very much focused on satisfying the requirements laid out in the previous chapter. Fiona Dowell, our client from Glasgow University's Veterinary school, evaluated our initial user interface design and we then revised it according to the feedback that we received from her. When we were satisfied with the design we moved on to the implementation phase.
 
-\section{Design Goals and Objectives}
+\section{Design Goals and Considerations}
 
-	\subsection{Admin}
+The overall design goals for the application follow principles already well established in the field of web development.
 
-	Reflect and discuss functional requirements in greater detail and how they relate to our design goals and objectives.
-	Why are each of these important?
-	How are we going to achieve these goals and objectives?
+These were:
 
-	\subsection{User}
+\begin{enumerate} 
 
-	Reflect and discuss functional requirements in greater detail and how they relate to our design goals and objectives.
-	Why are each of these important?
-	How are we going to achieve these goals and objectives?
+\item{\textbf{Precedence}} \\
+The use of positioning, colour, size and contrast to naturally guide the user around the application. For example, most sites have a logo featured in the top left corner because studies have shown this to be the first place users look when accessing web sites. This enables natural navigation sequences: elements like the navigation bar being strategically placed so users' eyes will follow from the larger, relatively contrasted logo to the navigation bar.
+
+\item{\textbf{Navigation}} \\
+The principle of making it easy and intuitive for users to navigate your web site. For example, links and buttons should be well positioned and clearly indicate their function while offering appropriate feedback when clicked. Measures should also be taken to inform the user where they are currently within the application.
+
+\item{\textbf{Typography}} \\
+The text of a web application is the most common element of design and therefore deserves significant consideration. Font type, size, spacing and colour are essential to the application's overall clarity and readability.
+
+\item{\textbf{Usability}} \\
+The encompassment of previously defined principles such as precedence, navigatibility and text. They relate to how usable the application is for its users. An important usability consideration is that of 'standards adherance'. This is the following of conventions laid out and used by millions of other websites, such as underlined text indicating a link.
+
+\item{\textbf{Consistency}} \\
+The principle of making the application's design elements ``match'' coherently between pages and on the same page of the site. Attributes like colour and font choice, for example, should remain consistent across the site.
+
+\item{\textbf{Clarity}} \\
+The appropriate use of design techniques such as positioning, contrast, font aliasing and others to make your design stand out crisply and clear. 
+\end{enumerate}
+	
+
+
+\subsection{Admin}
+
+The admin user is solely responsible for the content management of the application. With that in mind we approached the admin interface's design with a heavy focus on usability and navigation, rather than fancy themes and textual styles. We felt that the admin interface should possess a natural gravitas; that it should be taken seriously as a tool that controls the entire functionality of the application and not as a novel throwaway feature of the site. To this extent our goal was to use a very simple stripped theme, contrasting sharply in style and presentation with what normal users would see of the site. This was a willful breaking of the consistency design principle to enforce a measure of aforementioned seriousness onto the admin interface. \\
+
+We also had to consider that the likely admins of the application would be relatively inexperienced with regards to administrating an entire web application's content. Being mindful of this we had to design the interface to be acommodating for the inexperienced, allowing for easy navigation and informative feedback with every action taken.
+
+\subsection{Student}
+
+In stark contrast to that of the admin user, the student's view of the web application had to embody all design goals previously defined in this chapter. They had to be able to navigate the site easily, knowing where they are at all times and how to get to where they would like to go with no fuss or ambiguity.
+
+As this application's core functionality is assessment based it was important to have a gentle colour theme that would contrast naturally with the displayed content and not distract the user. This also held true with appropriate user feedback. An early design decision was that the user should receive timely responsive feedback when answering questions.
+
 
 \section{Initial Design}
 
-	\subsection{ER Diagram}
-	ER Diagram essentially showing the relationships between models.
-	\subsection{Activity Diagram}
-	Activity diagram each for admin and user 
+\subsection{ER Diagram}
+	
+After establishing our initial design goals we created an entity relationship diagram. This allowed us to map out and define the application's content structure and how they related to eachother. Defining our data models at this phase allowed us to fix early misconceptions and enabled us to have a smoother implementation process, as we already understood quite clearly how each distinct entity related to one another.
+
+
+
+\subsection{Activity Flow Diagrams}
+	
+This diagram shows the flow of interaction for each user within the application. 
+
+Activity diagram each for admin and user 
 	\subsection{Walkthrough}
 	Walkthrough linking the activities of admin and user together.
 
