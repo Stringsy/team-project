@@ -11,7 +11,7 @@ class Topic(models.Model):
 
 class Question(models.Model):
 	qTopic = models.ForeignKey(Topic)
- 	text = models.CharField(max_length=500)
+ 	text = models.CharField(max_length=1500)
  	answer = models.CharField(max_length=100)
  	def __unicode__(self):
  		return self.text
