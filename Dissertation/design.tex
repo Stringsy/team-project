@@ -18,40 +18,146 @@
 \chapter{Design}
 \label{design}
 
-This chapter covers the various aspects of the application's design process. As our project was client-based the design was very much focused on satisfying the requirements laid out in the previous chapter. Fiona Dowell, our client from Glasgow University's Veterinary school, evaluated our initial user interface design and we then revised ir according to the feedback that we received from her. 
+This chapter covers the various aspects of the application's design process. As our project was client-based the design was very much focused on satisfying the requirements laid out in the previous chapter. Fiona Dowell, our client from Glasgow University's Veterinary School, evaluated our initial user interface design and we then revised it according to the feedback that we received from her. When we were satisfied with the design we moved on to the implementation phase.
 
-\section{Design Goals and Objectives}
+\section{Design Goals and Considerations}
 
-	\subsection{Admin}
+The overall design goals for the application follow principles already well established in the field of web development.
 
-	Reflect and discuss functional requirements in greater detail and how they relate to our design goals and objectives.
-	Why are each of these important?
-	How are we going to achieve these goals and objectives?
+These were:
 
-	\subsection{User}
+\begin{enumerate} 
 
-	Reflect and discuss functional requirements in greater detail and how they relate to our design goals and objectives.
-	Why are each of these important?
-	How are we going to achieve these goals and objectives?
+\item{\textbf{Precedence}} \\
+The use of positioning, colour, size and contrast to naturally guide the user around the application. For example, most sites have a logo featured in the top left corner because studies have shown this to be the first place users look when accessing web sites. This enables natural navigation sequences: elements like the navigation bar being strategically placed so users' eyes will follow from the larger, relatively contrasted logo to the navigation bar.
+
+\item{\textbf{Navigation}} \\
+The principle of making it easy and intuitive for users to navigate your web site. For example, links and buttons should be well positioned and clearly indicate their function while offering appropriate feedback when clicked. Measures should also be taken to inform the user where they are currently within the application.
+
+\item{\textbf{Typography}} \\
+The text of a web application is the most common element of design and therefore deserves significant consideration. Font type, size, spacing and colour are essential to the application's overall clarity and readability.
+
+\item{\textbf{Usability}} \\
+The encompassment of previously defined principles such as precedence, navigability and text. They relate to how usable the application is for its users. An important usability consideration is that of 'standards adherence'. This is the following of conventions laid out and used by millions of other websites, such as underlined text indicating a link.
+
+\item{\textbf{Consistency}} \\
+The principle of making the application's design elements ``match'' coherently between pages and on the same page of the site. Attributes like colour and font choice, for example, should remain consistent across the site.
+
+\item{\textbf{Clarity}} \\
+The appropriate use of design techniques such as positioning, contrast, font aliasing and others to make your design stand out crisply and clear. 
+\end{enumerate}
+	
+
+
+\subsection{Admin}
+
+The admin user is solely responsible for the content management of the application. With that in mind we approached the admin interface's design with a heavy focus on usability and navigation, rather than fancy themes and textual styles. We felt that the admin interface should possess a natural gravitas; that it should be taken seriously as a tool that controls the entire functionality of the application and not as a novel throwaway feature of the site. To this extent our goal was to use a very simple theme, contrasting sharply in style and presentation with the student user interface. This was a wilful breaking of the consistency design principle to enforce a measure of aforementioned seriousness onto the admin interface. \\
+
+We also had to consider that the likely admins of the application would be relatively inexperienced with regards to administrating an entire web application's content. Being mindful of this we had to design the interface to be accommodating for the inexperienced, allowing for easy navigation and informative feedback with every action taken.
+
+\subsection{Student}
+
+In stark contrast to that of the admin user interface, the student's view of the web application had to embody all design goals previously defined in this chapter. They had to be able to navigate the site easily, knowing where they were at all times and how to get to where they would like to go with no fuss or ambiguity.
+
+As this application's core functionality is assessment based it was important to have a gentle colour theme that would contrast naturally with the displayed content and not distract the user. This also held true with appropriate user feedback. We made an early design decision to provide the user with timely responsive feedback when answering questions.
+
+Talk about how the question bit should be fun. Assessment bit i mean.
 
 \section{Initial Design}
 
-	\subsection{ER Diagram}
-	ER Diagram essentially showing the relationships between models.
-	\subsection{Activity Diagram}
-	Activity diagram each for admin and user 
-	\subsection{Walkthrough}
-	Walkthrough linking the activities of admin and user together.
+\subsection{ER Diagram}
+	
+After establishing our initial design goals we created an entity relationship diagram. Defining our data models at this phase allowed us to clearly understand the distinction between entities and how they relate to each other.
 
-	\subsection{Paper Prototype}
-	\subsection{Prototype Evaluation}
+
+
+\subsection{Activity Flow Diagrams}
+	
+This diagram shows the flow of interaction for each user type within the application. 
+
+\subsection{Walkthrough}
+	
+Walkthrough linking the activities of admin and user together.
+
+\subsection{Paper Prototype}
+
+1. What is paper prototyping?
+Paper prototyping is an effective and cheap to method to ascertain a suitable design skeleton. using paper
+
+2. Why is it effective for this project?
+Allowed us to experiment with what the application might look like.
+Set out to generate several possible design directions for the application.
+Easy to review and iterate upon as easy to send to client and get feedback.
+More opportunities for constructive feedback and more possibilities of pleasing the client.
+This stage of design was imperative because client satisfaction was one of the requirements.
+Talk about varying the designs between sketches to get the most feedback coverage. The most variety.
+
+3. What was to be represented in the paper prototype and how does this relate to the student's functional requirements?
+   
+4. Show prototypes via diagram.
+For the two prototypes she chose, annotate and describe the features of each and how they relate to the student's requirements. Add welcome screen to this. When going over final assessment screen, talk about how it meets the requirement of being fun and interactive.
+
+5. Why not paper prototype admin interface?
+   As discussed in next chapter we had decided to use Django as it had a built in admin interface that integrates excellently with our defined data models. We knew Django's interface had quite a sparse simple theme which made it ideal as it reflected our previously stated design goals for it.
+  
+\subsection{Prototype Evaluation}
+
+1. Sent Fiona the sketches for review alongside functionality questions, these would impact the design when answered.
+ 
+2. We received feedback from Fiona (check the email) and herself and colleagues rated their favourites. Did she pick the same  
+   as we thought? As we hoped? She did! That was a reinforcement that were thinking along the correct design lines. Already    making good headway with design features and planning. It was easy decision then to use that design since the choices coincided with the teamm's own preferences.
+   
+Mention that welcome screen protoype, while not being chosen, was still relevant as a design path for the welcome screen.
+
+3. Issues: Prptotypes didn't cover some functional requirements --> viewing/answering questions on topics
+   Why an issue? Was because there was an important element of functionality missing from initial design so when that feature came to be designed it may accidentally or forcefully alter the other elements' design. An optimal solution would have been to to consider more carefully the entire functionality before committing to an evaluation. 
+   
+   Another issue: Sending all the prototypes and making her pick between them all, when all of them weren't showcasing identical functionality. i.e no one chose the welcome screen because the others were more interesting but the welcome screen was fine really, for a welcome screen.  
+   
+4. While we knew further iteration and changes were likely required for implementation, we felt this was a solid base to start from.
 
 \section{Interface Design}
-	\subsection{Admin Interface}
-	\subsection{User Interface}
+1. Small introduction to explaining the following sections.
+We'll analyse the two user interface portions of the site, how the design meets specific functional requirements and overall design goals. 
 
+\subsection{Admin User Interface}
+Talk about how the admin interface was implemented first.
+Why was the admin interface designed first?
+Because the front end cannot function without a functioning back end, and the admin interface provides the content management for the backend to send to the frontend.
+
+How does the admin user interface design match its design and functionality goals?
+Using annotated screenshots, show the different parts of the admin interface.
+Talk about how little things like the action history allows an inexperienced admin user to understand and review past actions.
+
+Issues: We didn't have fine grained control over the look and feel of the admin interface. While we still felt it was appropriate and suitably met our design considerations, it would have been better if Django allowed us greater customisation.
+
+\subsection{Student User Interface}
+
+1. Show and talk about the welcome screen. (annotated)
+Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
+
+if Issues: What they are, why they are and how they were overcame or could be prevented.
+
+2. Show and talk about the topic/question screen. (annotated)
+Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
+
+if Issues: What they are, why they are and how they were overcame or could be prevented.
+
+2. Show and talk about the final assessment screen. (annotated)
+Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements. Relate to this being part of a fun learning environment. How the animal life bar links you tentatively to care about the creature. That kinda thing.
+
+if Issues: What they are, why they are and how they were overcame or could be prevented.
+One issue was feedback from Fiona concerning the size of slider and question placement. Say how the final design reflects this and how useful it was to have a client that was able to provide assertive feedback on what she required. 
 
 \section{Conclusion}
+
+Did the overall design meet the individual requirements, functional requirements and overall design considerations?
+Where they didn't, how could this be improved? i.e. what would we change about the design process to nullify these issues.
+Were we pleased with the overall outcome of the design?
+One of the factors of design pleasure was the client.
+How does the achivement of a sucessful design process prepare you for a successful implementation?
+Did we feel this was the case?
+
 
 
 
