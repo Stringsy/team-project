@@ -117,20 +117,26 @@ This section covers the user interfaces for both admins and students, analysing 
 
 <annotated front page diagram>
 
-Figure (x.x) shows the main page of the admin interface after the admin user has logged in. The interface's specific design theme was largely out of our hands as Django provided this for us. The lack of design control ofer the interface wasn't an issue however, as it conformed to our earlier design goals that the interface should be sufficiently different in theme and style from the student user interface. As figure (x.x) shows, the overall theme is quite minimalistic. There is no extraneous details or features that could distract the admin use
+Figure (x.x) shows the main page of the admin interface after the admin user has logged in. The interface's specific design theme was largely out of our hands as Django provided this for us. The lack of design control wasn't an issue however, as it conformed to our earlier design goals that the interface should be sufficiently different in theme and style from the student user interface. As figure (x.x) shows, the overall theme is quite minimalistic. There is no extraneous details or features that could distract the admin user.
 
-How does the admin user interface design match its design and functionality goals?
-Using annotated screenshots, show the different parts of the admin interface.
-Talk about how little things like the action history allows an inexperienced admin user to understand and review past actions.
+Annotation 1 shows the welcome message and menu for the user that has just logged into admin interface. It's placement at the top right hand side of the screen adheres to current best practise in web development, which in turn increases the usability of the interface. In terms of typography, the use of bold text confidently directs the user's eye towards expected features such as ``Change password'' and ``Log out''.
 
-Issues: We didn't have fine grained control over the look and feel of the admin interface. While we still felt it was appropriate and suitably met our design considerations, it would have been better if Django allowed us greater customisation.
+Annotation 2 highlights several of the user administration use cases in that they should be able to add, remove and edit current users within the application. These options are displayed logically by being grouped together and have icons that adhere to common user interface idioms. For example the ability to add a user is annotated with a plus symbol, enabling inexperienced users to intuitely deduce how that function would operate. 
+
+Annotation 3 covers the content administrator's functional requirements in being able to add, edit and remove topic content. This annotation's style is identical to that of annotation 2, in that it contributes to the overall consistency of the admin user interface, providing a clear and usable experience for the user. As with annotation 2 a clearly recognisable icon (a pencil) is used to indicate that the link in question leads to editing options for the topics. 
+
+Annotation 4 shows the ``Recent Actions'' bar of the interface. This enables admin users to see all their previous administrative actions for the application. This is very useful as it allows the administrator to track down previous changes to content and navigate to them directly. This navigation is further enhanced by the blue colour of the text, indicating that the text is a link and can be clicked. This blue text link consistency greatly adds to the expected functionality and to the usability of the interface as a whole.
+
+The only design issue we faced with the admin user interface was the lack of creative control over the look and feel. While we still felt it was appropriate and suitably met our design considerations, it would have been better if Django allowed us greater customisation.
 
 \subsection{Student User Interface}
+
+fefe
 
 1. Show and talk about the welcome screen. (annotated)
 Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
 
-if Issues: What they are, why they are and how they were overcame or could be prevented.
+if I   ssues: What they are, why they are and how they were overcame or could be prevented.
 
 2. Show and talk about the topic/question screen. (annotated)
 Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
