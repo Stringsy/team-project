@@ -175,14 +175,15 @@ required context from the Models.py and our Backend Services.
 This is our Sqlite3 Database. Other database options included MySQL, Oracle or 
 PostgreSQL. However we opted in for Sqlite3 since it offers all the functionality we 
 need and Django provides more support for it as it is its default option. \\
-\section{Back End}
-\subsection{Topic}
+\section{Back End - Data Models}
+Our database consists of 4 basic data models. 
+\subsection{Data Model:Topic}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline title & CharField & 1000 characters max \\ 
 \hline pub\_date & DateTime &  \\ \hline
 \end{tabular}
-\subsection{Question}
+\subsection{Data Model:Question}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline qTopic & ForeignKey & Points to a Topic object \\ 
@@ -190,14 +191,14 @@ need and Django provides more support for it as it is its default option. \\
 \hline answer & CharField & 100 characters max \\ \hline
 \end{tabular}
 
-\subsection{FinalTestQuestion}
+\subsection{Data Model:FinalTestQuestion}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline text & CharField & 2000 Characters max length \\ 
 \hline answer & CharField & 100 characters max \\ \hline
 \end{tabular}
 
-\subsection{Slide}
+\subsection{Data Model:Slide}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline sTopic & ForeignKey & Points to a Topic object \\ 
@@ -236,7 +237,17 @@ in using javascript and jquery. We managed to get Pyjamas set up successfullly,
 but the result was not exactly what we expected. The design looked poor and we 
 had to invest even more time in advancing our skills on coding a GUI with python
 \subsubsection{Compination of traditional Django friendly frameworks}
-TODO! 
+Luckily for us, one of our team members who is really confident on his web design skills
+convinced us that surely using traditional web design methods, such as writing the code for the templates directly in javascript and using a simple collection of tools such as the Twitter Bootstrap might be worth looking into. He suggested that he can try work out a first draft of the Topics page so that we can see what he can produce with these tools and judge for ourselves. Creating the page actually took him less than one hour and that was a wakeup call for us since the sample page he created was both looking aesthetically nice and the technologies used were working with the Django seamlessly with minimal effort.  
+We started by creating a base.html template. Django gives a developer the option to create templates that inherit from other templates. So any code that needs to be repeated in every page needs not be defined more than once. Our  base page with no additional content can be seen on figure "base.jpg". This includes the basic layout that should be displayed on ALL templates of our application. So to make the connection between our base template and all other template we had to define an empty Django tag  called “content block” in our base.html template. Then on every page that needs to inherit from base.html we can define the content block so that it includes any additional data that each specific template may require. An example of how a block is defined in a base template is shown in figure “baseblock.jpg” and then the way the base template is inherited and the “content block” is used can be seen on figure "extendsbase".
+\begin{figure}[h!]
+   \caption{A picture of a gull.}
+   \centering
+     \includegraphics[width=0.5\textwidth]{images/extendsbase.jpg}
+\end{figure}
+\includegraphics[width=\linewidth]{images/extendsbase.jpg}
+\includegraphics[width=\linewidth]{images/base.jpg}
+\includegraphics[width=\linewidth]{images/baseblock.jpg}
 \section{Middleware: Linking the back with the front}
 Talk about how the Django server makes the connection between the front end and the back end.
 \section{Message Passing}

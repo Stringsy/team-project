@@ -1,17 +1,16 @@
+
 {% extends 'DrugNinja/base.html' %}
 
 {% block content %}
-<div class="span0"></div>
-<div class="span11">
-<h1> Contents </h1>
-{% if topics %}
-{% for topic in topics %}
-<a href="/topic/{{forloop.counter0}}"><h3><li>{{topic}}</li></h3></a>
-{% endfor %}
-{% else %}
-<h3> No topics in database <h3>
-{% endif %}
-
-
-
+	<div class="span0"></div>
+	<div class="span11">
+	<h1> Contents </h1>
+		{% if topics %}
+			{% for topic in topics %}
+				<a href="/topic/{{forloop.counter0}}"><h3><li>{{topic}}</li></h3></a>
+			{% endfor %}
+		{% else %}
+			<h3> No topics in database </h3>
+		{% endif %}
+	</div>
 {% endblock %}
