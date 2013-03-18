@@ -20,6 +20,8 @@
 
 This chapter covers the various aspects of the application's design process. As our project was client-based the design was very much focused on satisfying the requirements laid out in the previous chapter. Fiona Dowell, our client from Glasgow University's Veterinary School, evaluated our initial user interface design and we then revised it according to the feedback that we received from her. When we were satisfied with the design we moved on to the implementation phase.
 
+\newpage
+
 \section{Design Goals and Considerations}
 
 The overall design goals for the application follow principles already well established in the field of web development.
@@ -27,7 +29,6 @@ The overall design goals for the application follow principles already well esta
 These were:
 
 \begin{enumerate} 
-
 \item{\textbf{Precedence}} \\
 The use of positioning, colour, size and contrast to naturally guide the user around the application. For example, most sites have a logo featured in the top left corner because studies have shown this to be the first place users look when accessing web sites. This enables natural navigation sequences: elements like the navigation bar being strategically placed so users' eyes will follow from the larger, relatively contrasted logo to the navigation bar.
 
@@ -47,11 +48,9 @@ The principle of making the application's design elements ``match'' coherently b
 The appropriate use of design techniques such as positioning, contrast, font aliasing and others to make your design stand out crisply and clear. 
 \end{enumerate}
 	
-
-
 \subsection{Admin}
 
-The admin user is solely responsible for the content management of the application. With that in mind we approached the admin interface's design with a heavy focus on usability and navigation, rather than fancy themes and textual styles. We felt that the admin interface should possess a natural gravitas; that it should be taken seriously as a tool that controls the entire functionality of the application and not as a novel throwaway feature of the site. To this extent our goal was to use a very simple theme, contrasting sharply in style and presentation with the student user interface. This was a wilful breaking of the consistency design principle to enforce a measure of aforementioned seriousness onto the admin interface. \\
+The admin user is solely responsible for the content management of the application. With that in mind we approached the admin interface's design with a heavy focus on usability and navigation, rather than fancy themes and textual styles. We felt that the admin interface should possess a natural gravitas; that it should be taken seriously as a tool that controls the entire functionality of the application and not as a novel throwaway feature of the site. To this extent our goal was to use a very simple theme, contrasting sharply in style and presentation with the student user interface. This was a wilful breaking of the consistency design principle to enforce a measure of aforementioned seriousness onto the admin interface.
 
 We also had to consider that the likely admins of the application would be relatively inexperienced with regards to administrating an entire web application's content. Being mindful of this we had to design the interface to be accommodating for the inexperienced, allowing for easy navigation and informative feedback with every action taken.
 
@@ -61,7 +60,7 @@ In stark contrast to that of the admin user interface, the student's view of the
 
 As this application's core functionality is assessment based it was important to have a gentle colour theme that would contrast naturally with the displayed content and not distract the user. This also held true with appropriate user feedback. We made an early design decision to provide the user with timely responsive feedback when answering questions.
 
-Talk about how the question bit should be fun. Assessment bit i mean.
+An important design goal was to create an interactive learning experience for the user. In order to achieve this we decided to include an animal avatar with an associated health bar. A correct answer would have no effect whereas an incorrect answer would result in health loss. This design feature helps to engage the student on a personal level as their progress will affect the animal's lifespan. 
 
 \section{Initial Design}
 
@@ -79,51 +78,42 @@ This diagram shows the flow of interaction for each user type within the applica
 	
 Walkthrough linking the activities of admin and user together.
 
-\subsection{Paper Prototype}
+\subsection{Paper Prototypes}
 
-1. What is paper prototyping?
-Paper prototyping is an effective and cheap to method to ascertain a suitable design skeleton. using paper
+Paper prototyping was an effective and inexpensive method used to determine the design direction of the student user interface. The use of paper prototypes allowed us to experiment with various design configurations without the overhead of time and resources. This method of design was particularly suited to this application as it was simple to review and to iterate upon. Client involvement was a requirement for the success of the project. Therefore it was imperative that our early design ideas were subject to client review and feedback. Sending several prototypes for client evaluation meant that there was more potential for varied, constructive feedback. Receiving said feedback from the client afforded us more opportunity to revise our designs in accordance with their wishes. 
 
-2. Why is it effective for this project?
-Allowed us to experiment with what the application might look like.
-Set out to generate several possible design directions for the application.
-Easy to review and iterate upon as easy to send to client and get feedback.
-More opportunities for constructive feedback and more possibilities of pleasing the client.
-This stage of design was imperative because client satisfaction was one of the requirements.
-Talk about varying the designs between sketches to get the most feedback coverage. The most variety.
+The paper prototypes aimed to fulfil the student user's functional requirements as laid out in the previous chapter. This meant that we had to design mechanisms for the following use cases:
 
-3. What was to be represented in the paper prototype and how does this relate to the student's functional requirements?
-   
-4. Show prototypes via diagram.
-For the two prototypes she chose, annotate and describe the features of each and how they relate to the student's requirements. Add welcome screen to this. When going over final assessment screen, talk about how it meets the requirement of being fun and interactive.
+\begin{itemize}
+\item{Viewing Topics\textbf{ (SR1)}}
+\item{Viewing Slides\textbf{ (SR2)}}
+\item{Viewing Questions\textbf{ (SR3)}}
+\item{Answering Questions\textbf{ (SR4)}}
+\end{itemize}
 
-5. Why not paper prototype admin interface?
-   As discussed in next chapter we had decided to use Django as it had a built in admin interface that integrates excellently with our defined data models. We knew Django's interface had quite a sparse simple theme which made it ideal as it reflected our previously stated design goals for it.
-  
+As will be discussed in the Prototype Evaluation section, our client indicated that two prototypes were particularly suitable in meeting the requirements of the application.
+
+\textbf{Figure 1.1} --> Topic/Slide View 		\textbf{Figure 1.2} --> Final Assessment Page
+
+The above-left image (\textbf{Fig 1.1}) shows the individual topic view for the student user interface. The ``title'' at the top of the page represents the topic's name, with the slides for the topic being shown in the ``content'' section. The arrows contained within the content section represents the possibility of a slider being used, enabling the user to easily switch back and forth between slides. The breadcrumbs, shown below the content box, were designed to enhance user navigability by allowing the user to directly select a slide to navigate to. The rounded buttons to the right of the content section represent clickable links to navigate between individual topics. These design elements satisfy requirements \textbf{SR1} and \textbf{SR2}.
+
+This prototype satisfies design goals laid out in the beginning of this chapter. The judicious use of whitespace enhances the user interface's clarity. With regards to design precedence, the size of the content box (compared to other design features) functions as a focal point, demanding the user's attention. 
+
+The above-right image (\textbf{Fig 1.2}) shows the final assessment page for the student user interface. The inclusion of an animal avatar and health bar satisfies the design goal of interactive student engagement, resulting in a heightened learning experience. Similar to \textbf{Figure 1.1}, the use of whitespace and size precedence allows the user to understand and easily navigate the interface presented to them. The problem description section represents the functional requirement \textbf{SR3} and the box below plus the apply/inject button represents the functional requirement \textbf{SR4}.  
+
+We chose not to create a paper prototype of the admin interface because we knew that Django (the web framework we had chosen to implement the application with) would provide a suitable pre-defined interface. This will be discussed further in the Admin User Interface Subsection. 
+ 
 \subsection{Prototype Evaluation}
 
-1. Sent Fiona the sketches for review alongside functionality questions, these would impact the design when answered.
- 
-2. We received feedback from Fiona (check the email) and herself and colleagues rated their favourites. Did she pick the same  
-   as we thought? As we hoped? She did! That was a reinforcement that were thinking along the correct design lines. Already    making good headway with design features and planning. It was easy decision then to use that design since the choices coincided with the teamm's own preferences.
-   
-Mention that welcome screen protoype, while not being chosen, was still relevant as a design path for the welcome screen.
+The evaluation process involved sending the paper prototypes to our client, Fiona Dowell. This was an important part of the design process as her feedback would naturally impact the application's final design. 
 
-3. Issues: Prptotypes didn't cover some functional requirements --> viewing/answering questions on topics
-   Why an issue? Was because there was an important element of functionality missing from initial design so when that feature came to be designed it may accidentally or forcefully alter the other elements' design. An optimal solution would have been to to consider more carefully the entire functionality before committing to an evaluation. 
-   
-   Another issue: Sending all the prototypes and making her pick between them all, when all of them weren't showcasing identical functionality. i.e no one chose the welcome screen because the others were more interesting but the welcome screen was fine really, for a welcome screen.  
-   
-4. While we knew further iteration and changes were likely required for implementation, we felt this was a solid base to start from.
+With regards to the paper prototypes, the feedback confirmed our initial design choices. Both designs preferred by our team were also chosen by Fiona and her colleagues. The decision to revise and continue with these designs was reinforced by our client's feedback. This not only resulted in an easy design decision but also supported the overall design direction we had previously agreed on. While we knew further iteration and changes were likely required for implementation, we felt this was a solid base to start from.
 
 \section{Interface Design}
-1. Small introduction to explaining the following sections.
-We'll analyse the two user interface portions of the site, how the design meets specific functional requirements and overall design goals. 
+
+This section covers the user interfaces for both admins and students, analysing how the design meets specific functional requirements and overall design goals.
 
 \subsection{Admin User Interface}
-Talk about how the admin interface was implemented first.
-Why was the admin interface designed first?
-Because the front end cannot function without a functioning back end, and the admin interface provides the content management for the backend to send to the frontend.
 
 How does the admin user interface design match its design and functionality goals?
 Using annotated screenshots, show the different parts of the admin interface.
