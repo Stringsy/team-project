@@ -61,7 +61,7 @@ significant advantage to using a framework is that you're required to write only
 minimal amount of code to get up and running from scratch"(Professional Python 
 Frameworks: Web 2.0 Programming with Django and Turbogears page 48). This was 
 one of the most important reasons for which we opted in using a Web Application 
-Framework for our project. Afterwards, there was one more decision that needed to be 
+Framework for our project. In addition, web appliccation freamworks support software reuse and component based programming which can help us separate concerns in our web application by breaking it down into different components. Afterwards, there was one more decision that needed to be 
 undertaken. There are a number of frameworks available on the web so we had to decide 
 on one of them before starting our implementation. 
 \subsection {Which framework to use?}
@@ -118,14 +118,14 @@ according to our needs. This can be used, in our case, as a way for a Course
 Coordinator or a Tutor to create new topics, add slides and questions to each topic, 
 create questions for the final assessment page and create new users or groups of users 
 with special permissions. This will be discussed further in this report.
-\subsection{The MTV Model}
-The MTV model used by django is a development mode very similar to the MVC model which is widely used by a number of web application 
-frameworks such as Backbone.js SproutCore and the Cocoa framework used in Mac OS X and iOS applications. Django, since it likes to do things its own way, uses a "modified" version of the MVC model. Its model is called MTV (Model, Template, View). The model in the MVC 
-plays the same role as the model in MTV which is sensible. However, the "View" in the 
-MTV maps to the "Controller" of the MVC and the "Template" of the MTV maps to the 
+\subsection{The MVT Model}
+The MVT model used by django is a development mode very similar to the MVC model which is widely used by a number of web application 
+frameworks such as Backbone.js SproutCore and the Cocoa framework used in Mac OS X and iOS applications. Django, since it likes to do things its own way, uses a "modified" version of the MVC model. Its model is called MVT (Model, View, Template). The model in the MVC 
+plays the same role as the model in MVT which is sensible. However, the "View" in the 
+MVT maps to the "Controller" of the MVC and the "Template" of the MVT maps to the 
 MVC's "View". Of course this is slightly complicated so it might cause some confusion to 
 a developer coming from an MVC background. 
-The MTV in general defines the way everything works in Django. Everything in Django 
+The MVT in general defines the way everything works in Django. Everything in Django 
 can be broken down to 3 components; The Models, the Templates and the Views.
 \subsection{Models}
 "A model is the single, definitive source of data about your data. It contains the essential 
@@ -162,8 +162,11 @@ request with the definition in "urls.py" and call the appropriate view which is 
 argument of the url() function. In this case it will be the "contents" view.
 \section{3-Tier Architecture}
 For our implementation we used a 3-Tier Architecture.
-\subsection{N-Tier Architecture Diagram}
- \includegraphics[width=\linewidth]{images/ntier.jpg}
+\begin{figure}[!htb]
+\caption{3-Tier Architecture Diagram}
+ \centering
+\includegraphics[width=0.9\textwidth]{images/ntier.jpg}
+\end{figure}
 \subsection{Front End}
 The application can be accessed by any user with a web browser such as Internet 
 Explorer, Google Chrome, Mozzila Firefox, Safari and so on. \\
@@ -176,7 +179,7 @@ This is our Sqlite3 Database. Other database options included MySQL, Oracle or
 PostgreSQL. However we opted in for Sqlite3 since it offers all the functionality we 
 need and Django provides more support for it as it is its default option. \\
 \section{Back End - Data Models}
-Our database consists of 4 basic data models. 
+Our database consists of 4 basic data models. Namely, Topic, Question, FinalTestQuestion and Slide. According to our requirements, a Topic can have 0 or more questions and slides. Thus, the Question and Slide objects both have a foreign key that points to the Topic they belong to. More information on the definitions of our Data Models can be seen in the tables below: 
 \subsection{Data Model:Topic}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
@@ -210,7 +213,7 @@ The way Django is generally managing the Front End of an application is quite
 straight forward. It simply takes a predefined template (html file), adds any required 
 content from the models (database objects) and sends the file over to a web browser. 
 However creating simple html files and feeding them the data from our models is not 
-enough to produce a high quality web application. The fact that we were not 
+enough to produce a high quality web application. Producing a rich interactive user interface was extremely important in our case since the application would be used by students to assist their studying. Students can easily get tired of studying and abandon their task so we had to make the interface as attractive as possible, in the little time we had, so that a user can stay motivated and enjoy using it the application.The fact that we were not 
 experienced in web application was not helping us find a solution without investing 
 some time on researching. In our quest to find a way to manage the front end design 
 we looked at a number of solutions. Some of them were the "Backbone.js", "Tastypie" 
@@ -228,8 +231,6 @@ repositories were available online, all with example applications using Backbone
 However, since all of them were out of date and description for Backbone and 
 Django integration was vague at best, we soon abandoned the idea of using 
 Backbone. 
-\subsubsection{Tastypie}
-TODO!
 \subsubsection{Pyjamas}
 Pyjamas is a framework which takes code written in Python and translates that 
 into javascript and jquery code without the need of having a developer experienced 
@@ -239,28 +240,53 @@ had to invest even more time in advancing our skills on coding a GUI with python
 \subsubsection{Compination of traditional Django friendly frameworks}
 Luckily for us, one of our team members who is really confident on his web design skills
 convinced us that surely using traditional web design methods, such as writing the code for the templates directly in javascript and using a simple collection of tools such as the Twitter Bootstrap might be worth looking into. He suggested that he can try work out a first draft of the Topics page so that we can see what he can produce with these tools and judge for ourselves. Creating the page actually took him less than one hour and that was a wakeup call for us since the sample page he created was both looking aesthetically nice and the technologies used were working with the Django seamlessly with minimal effort.  
-We started by creating a base.html template. Django gives a developer the option to create templates that inherit from other templates. So any code that needs to be repeated in every page needs not be defined more than once. Our  base page with no additional content can be seen on figure "base.jpg". This includes the basic layout that should be displayed on ALL templates of our application. So to make the connection between our base template and all other template we had to define an empty Django tag  called “content block” in our base.html template. Then on every page that needs to inherit from base.html we can define the content block so that it includes any additional data that each specific template may require. An example of how a block is defined in a base template is shown in figure “baseblock.jpg” and then the way the base template is inherited and the “content block” is used can be seen on figure "extendsbase".
+We started by creating a base.html template. Django gives a developer the option to create templates that inherit from other templates. So any code that needs to be repeated in every page needs not be defined more than once. Our  base page with no additional content can be seen on figure 1.2 .
 \begin{figure}[h!]
-   \caption{A picture of a gull.}
+   \caption{Base.html Template}
    \centering
-     \includegraphics[width=0.5\textwidth]{images/extendsbase.jpg}
+     \includegraphics[width=0.6\textwidth]{images/base.jpg}
 \end{figure}
-\includegraphics[width=\linewidth]{images/extendsbase.jpg}
-\includegraphics[width=\linewidth]{images/base.jpg}
-\includegraphics[width=\linewidth]{images/baseblock.jpg}
+This includes the basic layout that should be displayed on ALL templates of our application. So to make the connection between our base template and all other template we had to define an empty Django tag  called “content block” in our base.html template (see figure 1.3). 
+\begin{figure}[h!]
+   \caption{The Base.html template with no additional content}
+   \centering
+     \includegraphics[width=0.6\textwidth]{images/baseblock.jpg}
+\end{figure}
+Then on every page that needs to inherit from base.html we can define the content block so that it includes any additional data that each specific template may require. An example of how a block is defined in a base template is shown in figure “baseblock.jpg” and then the way the base template is inherited and the “content block” is used can be seen on figure "extendsbase".
+\begin{figure}[h!]
+   \caption{Contents template inherits from base.html.}
+   \centering
+     \includegraphics[width=0.7\textwidth]{images/extendsbase.jpg}
+\end{figure}
+
 \section{Middleware: Linking the back with the front}
 Django makes the connection between the backend data models and the front end templates by interpreting a request from a web client, finding the required template for that request and rendering the context on the page by replacing all Django tags (text surrounded by '{\%' and  '\%}') with data returned by the responsible view for that request.  For  instance, figure **contentsView** shows how the contents View is defined. The tag “topics” is declared as a list of Topic objects and then by adding the key “topics” into the contents view context we are telling the view to return the list “topics” every time the tag “topics” is found on the template “contents.html”. Then in template “contents.html” we make use of a for loop to iterate through the topics list, and print out the topic name with a link to its unique url. After the template has been rendered it is sent on to the web browser where it is presented to the urer who requested the page.
 \section{Message Passing}
 
 \subsection{Database Request Format}
 Database Requests are handled by Django. A template may require information about a specific data model. The view that makes use of that specific model makes SQL request to the database which in turn returns any matching results from our SQLite database.
-Image **dataMessagePassing.png***
+\begin{figure}[h!]
+   \caption{Database Request figure}
+   \centering
+     \includegraphics[width=0.5\textwidth]{images/databaseMessagePassing.png}
+\end{figure}
 
 \subsection{Answer Validation Request}
-The validation of answers is done by an Ajax request to  the “validateAnswer” view or to the “validateFinalAnswer” view when the answer to be validated belongs to a final assessment type question. The validation is done by passing the question id and the provided answer as URL parameters. The view  then makes a request to the database requesting the answer of the required question. If the answer provided by the user is the same as the one stored in the database the view will respond to the web client with an appropriate Http Response as on figure **validateAnswer figure**. 
+The validation of answers is done by an Ajax request to  the “validateAnswer” view or to the “validateFinalAnswer” view when the answer to be validated belongs to a final assessment type question. The validation is done by passing the question id and the provided answer as URL parameters. The view  then makes a request to the database requesting the answer of the required question. If the answer provided by the user is the same as the one stored in the database the view will respond to the web client with an appropriate Http Response as on figure 1.6.
+\begin{figure}[h!]
+   \caption{Answer Validation Request figure.}
+   \centering
+     \includegraphics[width=0.6\textwidth]{images/validateAnswerRequest.png}
+\end{figure} 
 
 \subsection{Topic Related Data Request}
 Topic requests make use of the “Topic” view. The view uses the “topic.html” template and renders it so that it gains access to a list of Topic objects. When, for example, a user needs to navigate to the appropriate page for the first topic in the Topic objects list, they should navigate to “/topic/0” where 0 is the position of the first Topic objects in the topics list. When the slides of a specific Topic need to be displayed, a “for” loop is used to iterate through the list of slides and return only those that point to the Topic that was originally requested by the URL.
+
+\begin{figure}[h!]
+   \caption{Topic Related Request}
+   \centering
+     \includegraphics[width=0.7\textwidth]{images/topicRelatedRequest.png}
+\end{figure} 
 
 \section{End Product}
 \subsection{Desired Functionality}
@@ -268,27 +294,54 @@ The Desired Functionality section aims to describe how the desired functionality
 
 \subsubsection{Welcome Page}
 The welcome page is implemented through the “index” view.  It is maybe the simplest template in our project. It is a simple template that inherits from base.html and includes a static text with a brief description of our web application and a button that points to the first topic page.
-Welcome Page figure
+\begin{figure}[h!]
+   \caption{Final Welcome Page}
+   \centering
+     \includegraphics[width=0.7\textwidth]{images/welcomePage.png}
+\end{figure} 
 
 \subsubsection{Topic Page}
 The topic page consists of two equal width side bars. The left sidebar is a carousel which displays all the slides related to each topic and the right sidebar  consists of a “for” loop that displays all the questions related to each topic along with a text box for a user to enter their answer and a submit button. Once a submit button is pressed, an ajax call makes a request to the server which responds with a “correct answer” or “false answer” accordingly.  The response from the database updated the string on the submit button so the text on the button changes from “Submit” to “Correct answer” or “False answer”.
-Topic page figure
+\begin{figure}[h!]
+   \caption{Topic Page}
+   \centering
+     \includegraphics[width=0.7\textwidth]{images/topicPage.png}
+\end{figure} 
 
 \subsubsection{Contents Page}
 The contents page is implemented so that a user can navigate directly to a specific topic page without having to go through all other topics via the “Next” button on each topic page. A “for” loop is used on “contents.html” template which is used so that the “contents” view will replace the contents of the “for” loop with a list of all Topic Names currently stored in the database with links that point to that specific Topic’s page.
-***contents figure***
+\begin{figure}[!htb]
+\caption{Contents Page}
+ \centering
+\includegraphics[width=0.9\textwidth]{images/contentsPage.png}
+\end{figure}
 
 \subsubsection{Final Assessment Page}
 The final page is one of the core components of our application. The requirements were clear. A user should be faced with 10 random questions from the “FinalAssessmentQuestion” database model and he or she should only be allowed to have one attempt to answer the question. This is to make sure that a user pays the required amount of thinking before clicking the “Submit Answer” button. Our client initially provided us with a number of sample lecture slides so that we could get an idea of her lectures’ contents. We noticed that a picture she uses often to make her lecture slides more interesting to students is a picture of “donkey” from the Shrek movies. So we thought that since the users are probably already familiar with the Shrek donkey so we added it on a side bar in an attempt to make the Final Assessment Page more interesting and appealing to the users. We also added a “health bar” and a “Score” label. The score label has a maximum value of 100\% and it defaults to 0\% while the “health bar” has a maximum value of 100\% but defaults to the maximum. Each time a user enters a value to a questions text box and clicks the “Submit Answer” button an Ajax request is sent to the Django server which responds with “Correct Answer” or “False Answer”. If the answer was correct, the Score label will be update with the current score + 10 and the health bar will not be modified. However, if the answer was wrong the value of the health bar will go down by 10\% and the score will remain the same.  In addition, if the value of the health bar falls below 50\%, the image of the donkey will change from the default “happy donkey” to a “sad donkey” and then if it falls below 1\% an alert will be displayed to the user with a “You have killed your animal” notification and the picture of the donkey will be changed to a dead donkey.  A colour coded response is also displayed to the user as the question box turns red if the users answer was wrong, or green if the users question was correct. 
-Final assessment figure
+\begin{figure}[!htb]
+\caption{Final Assessment Page}
+ \centering
+\includegraphics[width=0.9\textwidth]{images/finalAssessmentPage.png}
+\end{figure}
 \subsubsection{Administration Page}
-The administrator page is dynamically created by Django. We only needed to define which models needed to be modifiable from the admin page and the  way we want them to be displayed.  Two groups of modifiable data models were defined. “Topics” and “FinalAssessmentQuestions”. The reason behind this was that questions and slides have a foreign key that points to a Topic so by selecting a Topic in the administration page a user can see and modify all slides and questions that are related to that Topic. By navigating to the “FinalAssessmentQuestions” a user can add, delete or modify a Final Assessment Question. By default, Django also provides a user management interface by which  a user with administrative rights can manage users by adding, removing or modifying permissions for other users.
-**figure admin interface**
+The administrator page is dynamically created by Django. We only needed to define which models needed to be modifiable from the admin page and the  way we want them to be displayed.  Two groups of modifiable data models were defined. “Topics” and “FinalAssessmentQuestions”. The reason behind this was that questions and slides have a foreign key that points to a Topic so by selecting a Topic in the administration page a user can see and modify all slides and questions that are related to that Topic. By navigating to the “FinalAssessmentQuestions” a user can add, delete or modify a Final Assessment Question. By default, Django also provides a user management interface by which  a user with administrative rights can manage users by adding, removing or modifying permissions for other users.The administration home page can be seen in Figure 1.4 and the Modify Topic interface in Figure 1.5
+\begin{figure}[!htb]
+\caption{Administration Home Page}
+ \centering
+\includegraphics[width=0.9\textwidth]{images/adminPage.png}
+\end{figure}
+
+\begin{figure}[!htb]
+\caption{Modify Topic Interface}
+ \centering
+\includegraphics[width=0.9\textwidth]{images/adminTopic.png}
+\end{figure}
 
 \subsection{Interaction Diagrams}
 \subsubsection{Topic Page}
+Interaction diagram for communications and message passing between Topic Page and the server
 \begin{figure}[!htb]
-\caption{Topic Page Interaction Diagram}
+\caption{Topic Page Interactions}
  \centering
 \includegraphics[width=0.9\textwidth]{images/topicPageMessagePassing.png}
 \end{figure}
@@ -300,6 +353,7 @@ Interaction diagram for communications and message passing between the Contents 
  \centering
 \includegraphics[width=0.9\textwidth]{images/contentsInteractionDiagram.png}
 \end{figure}
+
 \subsubsection{Final Assessment Page}
 Interaction diagram for communications and message passing between the Final Assessment Page and the server
 \begin{figure}[!htb]
@@ -308,16 +362,20 @@ Interaction diagram for communications and message passing between the Final Ass
 \includegraphics[width=0.9\textwidth]{images/finalAssessmentInteractionDiagram.png}
 \end{figure}
 \section{Challenges and Solutions}
-Referencing topics by topic.id
+\subsection{Referencing topics by topic.id}
 When we first started working with topics we were using the topic ids provided by Django to reference and call topics from a template's perspective. However we soon realised that Django was using the IDs provided by SQL and not some IDs that were generated by Django. The result of this error on our behalf was that when a Topic was removed from the database, the ID numbers for topics were not automatically regenerated so clicking the next button (this calls topic with topic ID equal to the current topic's ID+1) on a Topic page would call a Topic ID that might not exist in the database. Consequently, that would cause the application to run on an Index error In order to bypass this issue, we looked at alternative ways of indexing the list of Topics and returning available Topic numbers.  Instead of using Topic IDs we started using Topic List positions. More specifically, we are now creating a list of Topics in Topic view by requesting ALL the Topics currently held in the Database and then iterate over that one. For example, when “/topic/0” is called, instead of requesting Topic with TopicID==0 from the database, we are requesting the Topic in position [0] of our runtime created Topic list. This way, the numbers used to request topics are always up to date with exactly what's currently held in the Database.  We have also added checks to see whether the current topic is the first or last topic in the Topics list. In which case the “Next” or “Previous” buttons are hidden accordingly.
 
-URL Dispatcher for Validating Questions
-As mentioned in previous sections, the way we validate answers is by passing them as parameters with an Ajax Request.  The URL dispatcher then matches the url the web client requests and matches that with the “validate” url definition in urls.py. The url definition for “validate_answer” is: “url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\w+)', 'views.validate')”. By definition (?P<answer>\w+) accepts any string as answer. However when a user provides an answer such as “2.5”, the URL dispatcher accepts “2” and disgards anything after the decimal point. This was causing answer validations to fail even when the answer provided by the user was correct. The Django documentation on URLs was not particularly helpful so through a process of trial and error we arrived at a valid solution that can match both strings (this can be a non decimal number as well) and decimal numbers. In addition to our “url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\w+)', 'views.validate')” regular expression we added “url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\d+\.\d+)', 'DrugNinja.views.validate')” right before the first expression. In essense, when a validate answer request arrives, the URL dispatcher will try and match it to the new reqular expression which only matches answers with a decimal point. If the answer does not match, Django will try to match it to the second URL definition which accepts strings or non decimal integers and respond accordingly.
-Static Files
+\subsection{URL Dispatcher for Validating Questions}
+As mentioned in previous sections, the way we validate answers is by passing them as parameters with an Ajax Request.  The URL dispatcher then matches the url the web client requests and matches that with the "validate" url definition in urls.py. The url definition for "validate\_answer" is: \verb|"url(r'^validate_answer/(?P<question>\w+)/(?P<answer>\w+)|', 'views.validate')". By definition \verb|(?P<answer>\w+)| accepts any string as answer. However when a user provides an answer such as “2.5”, the URL dispatcher accepts “2” and disgards anything after the decimal point. This was causing answer validations to fail even when the answer provided by the user was correct. The Django documentation on URLs was not particularly helpful so through a process of trial and error we arrived at a valid solution that can match both strings (this can be a non decimal number as well) and decimal numbers. In addition to our \verb|“url(r'^validate_answer/|\\\verb|(?P<question>\w+)/(?P<answer>\w+)'|, 'views.validate')” regular expression we added \verb|“url(r'^validate_answer/|\\\verb|(?P<question>\\w+)/(?P<answer>\\d+\.\\|d+)', 'DrugNinja.views.validate')” right before the first expression. In essense, when a validate answer request arrives, the URL dispatcher will try and match it to the new reqular expression which only matches answers with a decimal point. If the answer does not match, Django will try to match it to the second URL definition which accepts strings or non decimal integers and respond accordingly.
+
+\subsection{Static Files}
 Django has some strict safety rules when it comes to static files. When we started our implementation, having only basic web design knowledge, we though that defining a static files directory would be enough for Django to be able to write and read files. This seemed to be the case since when we were uploading images to the system through the administration interface, the system seemed to be reading the files just fine and saving them in the correct directory. However, when a web browser made a request for a static file Django was returning 404 errors referring to a local file that we were sure that exists. This made absolutely no sense to us so resolving this error was particularly time consuming. After a lot of research in Django's Documentation we found out that Django does not allow a web browser to access the static files directory directly. A new directory should be defined as public in Django settings file. This way, a browser would make calls against the public directory and even though that directory is empty, Django will copy files to it and make them accessible to the web browser without making the original files valnurable to malicious activity by a web client user.
 \section{Known Issues}
-Font can be different from web browser to web browser.
-The slides carousel behaviour is slightly different when accessed through Google Chrome. This is not a serious issue and does not affect the user experience in any major way.
+There are currently two known issues in our application which are planned to be resolved after this release.\\
+\begin{itemize}
+\item Font can be different from web browser to web browser.
+\item The slides carousel behaviour is slightly different when accessed through Google Chrome. This is not a serious issue and does not affect the user experience in any major way.
+\end{itemize}
 
 
 \end{document}
