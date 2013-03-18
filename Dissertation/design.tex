@@ -69,15 +69,6 @@ An important design goal was to create an interactive learning experience for th
 After establishing our initial design goals we created an entity relationship diagram. Defining our data models at this phase allowed us to clearly understand the distinction between entities and how they relate to each other.
 
 
-
-\subsection{Activity Flow Diagrams}
-	
-This diagram shows the flow of interaction for each user type within the application. 
-
-\subsection{Walkthrough}
-	
-Walkthrough linking the activities of admin and user together.
-
 \subsection{Paper Prototypes}
 
 Paper prototyping was an effective and inexpensive method used to determine the design direction of the student user interface. The use of paper prototypes allowed us to experiment with various design configurations without the overhead of time and resources. This method of design was particularly suited to this application as it was simple to review and to iterate upon. Client involvement was a requirement for the success of the project. Therefore it was imperative that our early design ideas were subject to client review and feedback. Sending several prototypes for client evaluation meant that there was more potential for varied, constructive feedback. Receiving said feedback from the client afforded us more opportunity to revise our designs in accordance with their wishes. 
@@ -93,7 +84,15 @@ The paper prototypes aimed to fulfil the student user's functional requirements 
 
 As will be discussed in the Prototype Evaluation section, our client indicated that two prototypes were particularly suitable in meeting the requirements of the application.
 
-\textbf{Figure 1.1} --> Topic/Slide View 		\textbf{Figure 1.2} --> Final Assessment Page
+\begin{figure}[!htb]
+\caption{Topic View}
+\includegraphics[width=\linewidth]{/users/level3/1002336a/TP3/team-project/Dissertation/images/Prototype2.png}
+\end{figure}
+
+\begin{figure}[!htb]  
+\caption{Final Assessment}
+ \includegraphics[width=\linewidth]{/users/level3/1002336a/TP3/team-project/Dissertation/images/Prototype1.png}
+\end{figure}
 
 The above-left image (\textbf{Fig 1.1}) shows the individual topic view for the student user interface. The ``title'' at the top of the page represents the topic's name, with the slides for the topic being shown in the ``content'' section. The arrows contained within the content section represents the possibility of a slider being used, enabling the user to easily switch back and forth between slides. The breadcrumbs, shown below the content box, were designed to enhance user navigability by allowing the user to directly select a slide to navigate to. The rounded buttons to the right of the content section represent clickable links to navigate between individual topics. These design elements satisfy requirements \textbf{SR1} and \textbf{SR2}.
 
@@ -115,7 +114,10 @@ This section covers the user interfaces for both admins and students, analysing 
 
 \subsection{Admin User Interface}
 
-<annotated front page diagram>
+\begin{figure}[!htb]
+\caption{Admin User Interface}
+\includegraphics[width=\linewidth]{/users/level3/1002336a/TP3/team-project/Dissertation/images/admin_interface1.png}
+\end{figure}
 
 Figure (x.x) shows the main page of the admin interface after the admin user has logged in. The interface's specific design theme was largely out of our hands as Django provided this for us. The lack of design control wasn't an issue however, as it conformed to our earlier design goals that the interface should be sufficiently different in theme and style from the student user interface. As figure (x.x) shows, the overall theme is quite minimalistic. There is no extraneous details or features that could distract the admin user.
 
@@ -131,32 +133,49 @@ The only design issue we faced with the admin user interface was the lack of cre
 
 \subsection{Student User Interface}
 
-fefe
+\subsubsection{Main Content Screen}
 
-1. Show and talk about the welcome screen. (annotated)
-Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
+\begin{figure}[!htb]
+\caption{Content Screen}
+\includegraphics[width=\linewidth]{/users/level3/1002336a/TP3/team-project/Dissertation/images/topic_page_annotated.png}
+\end{figure}
 
-if I   ssues: What they are, why they are and how they were overcame or could be prevented.
+Figure x.4 shows the main page users will see when they interact with the system.
 
-2. Show and talk about the topic/question screen. (annotated)
-Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements.
+Annotation 1 highlights the image of the University of Glasgow's Veterinary School logo. This was included for two reasons: firstly it identifies the University to external bodies that may stumble across the application. Secondly it makes it appear more professional and therefore improves the overall aesthetics.
 
-if Issues: What they are, why they are and how they were overcame or could be prevented.
+Annotation 2 shows the application's main navigation section. These are clearly labelled for clarity to identify their purpose. This also has the additional property of increasing usability. Expert users such as students who have used the program before and want to jump to a specific page can utilise these navigational tools quickly.
 
-2. Show and talk about the final assessment screen. (annotated)
-Compare prototype to welcome screen. How does it compare? What are the improvements? What is it about the welcome screen that makes it suitable in the overall design considerations / functional requirements. Relate to this being part of a fun learning environment. How the animal life bar links you tentatively to care about the creature. That kinda thing.
+Annotation 3 is the sequential navigator for proceeding through topics. Depending on the topic selected there will also be a back button included. This function once again increases the usability of the application as well as adding to consistency to the design by providing a constant frame for content.
 
-if Issues: What they are, why they are and how they were overcame or could be prevented.
-One issue was feedback from Fiona concerning the size of slider and question placement. Say how the final design reflects this and how useful it was to have a client that was able to provide assertive feedback on what she required. 
+Annotation 4 is the final function available for navigation. This is our main content window where topic slides are displayed. When the mouse is hovered over the slide an arrow appears on either side of the screen to facilitate navigation. The use of arrows promotes recognition rather than recall for the user. 
+
+Annotation 5 shows the questions associated with each topic. Each question is affiliated with a slide and users can answer them in their own time. This promotes the interactive learning element of the application. Each question gives instant feedback upon submission by altering the text in the box to display ''Correct Answer`` or ''Wrong Answer.`` 
+
+\subsubsection{Final Assessment Screen}
+
+\begin{figure}[!htb]
+\caption{Final Assessment}
+\includegraphics[width=\linewidth]{/users/level3/1002336a/TP3/team-project/Dissertation/images/annotated_assessment.png}
+\end{figure}
+
+Figure x.5 shows the assessment section of the application which presumably will be accessed when the user feels suitably prepared for it.
+
+Annotation 1 shows an example of a question being answered wrong. Feedback is instantaneous with the question background changed to a subtle red colour, this is an intentional design decision to keep users engaged and willing to learn without discouraging them. Textual feedback is also provided for futher clarification. 
+
+Annotation 2 shows an answer that is correct. This time the colour has changed to a slightly lighter green colour. Both the correct and incorrect colours are intrusive and fit with the design so as to keep the overall look pleasing.
+
+The following three annotations illustrate the gamification of our application. By including the following elements we hope to engage users more effectively and provide an insentive to learn. Firstly they will attain a higher score and secondly they will keep the animal alive.
+
+Annotation 3 is a progress bar which portrays the remaining health of the animal. For every wrong answer the bar will decrease indicating you hurt the animal (as a vet would do if they got these calculations wrong in the real world). Insentive to keep the animal alive will hopefully encourage the suer to get as many right answers as possible.
+
+Annotation 4 is an image of the animal the students attempting to keep alive. For every decrement of 30 points the image changes to a steadily unhealthier looking donkey eventually resulting in a ``dead'' donkey. As with annotation 3 it is included to spur users to anser questions correctly.
+
+Annotation 5 shows the users current score. This increases by ten points for every correct answer submitted and does not increase with wrong answers. 
 
 \section{Conclusion}
 
-Did the overall design meet the individual requirements, functional requirements and overall design considerations?
-Where they didn't, how could this be improved? i.e. what would we change about the design process to nullify these issues.
-Were we pleased with the overall outcome of the design?
-One of the factors of design pleasure was the client.
-How does the achivement of a sucessful design process prepare you for a successful implementation?
-Did we feel this was the case?
+The main focus of the design for the entirety of the application was to provide an interface that would be easy to use and reduce user frustration. Throughout development the idea of keeping users engaged with their learning and the content has been at the forefront and with the inclusion of a ``game'' of sorts on the final assessment the team believes they have succeeded in achieving this.
 
 
 
