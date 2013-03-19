@@ -568,32 +568,32 @@ The main focus of the design for the entirety of the application was to provide 
 \chapter{Implementation}
 \label{implementation}
 \section{Developing a Web Based Application }
-One of the requirements for our project was that our final product should be available to 
+One of the requirements for our project was that our final product should be available for 
 use to any user with an Internet Connection. More specifically, any student should be 
-able to access the application and practice on their drug calculations in their free time 
-wherever they are with any device that can access the Web. This can be a laptop 
+able to access the application and practice on their drug calculations in their free time, 
+wherever they are, with any device that can access the Web. This can be a laptop 
 computer, a mobile phone or a tablet computer. \\ 
-It was, therefore, clear to us that creating an application that needs to be installed on a 
-machine in order to be usable was not an option. After a discussion with the team we 
+Therefore, it was clear to us that creating an application that needs to be installed on a 
+machine in order to be usable was not an option. After a discussion with the team, we 
 decided that the most suitable solution would be to implement a application that would be 
 accessible via a Web Browser. A web application would make it possible for any user to 
 access our application from any device simply by navigating to our Web Applications 
 URL address. \\ 
-
 \subsection {Using a Web Application Framework}
 After doing some research looking for the best possible option for developing web 
-applications we decided that we would make use of a web development framework 
+Applications, we decided that we would make use of a web development framework 
 rather than writing the code for the whole application from scratch.
 \subsubsection{ Developing from Scratch}
 Developing an application from scratch has the potential to take up much needed time 
-from the Development Phase. For each different page of an application there needs to be 
-a unique file (for example an html document) that will be sent to the client's web browser 
+of the Development Phase. For each different page of an application there needs to be 
+a unique file (for example, an html document) that will be sent to the client's web browser 
 when the page is called. An application usually has the same layout on every page with 
 basic components, like the applications logo or the applications default buttons, being 
 displayed on each page. It is therefore clear that having a separate file to correspond to 
 each different page of an application can lead to a lot of coding overhead and 'boiler 
 plate' code. In the case of a change request, a developer will need to modify the code in 
-each different page separately which would take much of our development time. Time was a major concern for us as we only had a limited amount of time to get the application designed, developed, evaluated and delivered to our client. \subsubsection{Developing with a web application framework}
+each different page separately which would take much of our development time. Time was a major concern for us as we only had a limited amount of time to get the application designed, developed, evaluated and delivered to our client.
+\subsubsection{Developing with a web application framework}
 ``A Web Application Framework is a set of prefabricated software building blocks that 
 programmers can use, extend, or customise for specific computing solutions'' (Leif 
 Azzoperdi, DIM3 Lecture 3). A framework would allow us to start implementing our 
@@ -601,9 +601,9 @@ application with a concrete base to support us by providing default functionalit
 allowing us to extend or override functionality to suit our specific requirements. ``One 
 significant advantage to using a framework is that you're required to write only a 
 minimal amount of code to get up and running from scratch''(Professional Python 
-Frameworks: Web 2.0 Programming with Django and Turbogears page 48). This was 
+Frameworks: Web 2.0 Programming with Django and Turbogears). This was 
 one of the most important reasons for which we opted in using a Web Application 
-Framework for our project. In addition, web appliccation freamworks support software reuse and component based programming which can help us separate concerns in our web application by breaking it down into different components. Afterwards, there was one more decision that needed to be 
+Framework for our project. In addition, web application frameworks support software reuse and component based programming which can help us separate concerns in our web application by breaking it down into different components. Afterwards, there was one more decision that needed to be 
 undertaken. There are a number of frameworks available on the web so we had to decide 
 on one of them before starting our implementation. 
 \subsection {Which framework to use?}
@@ -612,25 +612,25 @@ our software but we had to decide on one of them. Our supervisor suggested that 
 of us take one of the three frameworks each and try to build a simple application in one 
 week. This would not only show us what can be built with that particular framework but 
 it would also show us how long it take for a developer to learn how to use the 
-framework, and how much can be built in a week by using that framework. The three 
+framework, and how much could be built in a week by using that framework. The three 
 options were 
 \begin{itemize}
 \item Web2Py 
 \item Django 
 \item Ruby on Rails 
 \end{itemize}
-After our frameworks evaluation we came to the following conclusions about them: 
+After our frameworks evaluation, we came to the following conclusions about them: 
 Ruby on Rails offers useful code generators which can produce functions out of one line 
-of code written by the developer and has a build in testing framework which can be 
-particularly useful for our testing. However, the mystery behind the code generators can 
+of code, written by the developer, and has a built in testing framework which can be 
+particularly useful for testing. However, the mystery behind the code generators can 
 cause confusion to developers and thus increase development time. \\
 Web2Py uses a Python-based template language and supports development from a Web 
-Browser. We have been using python for our introduction to programming course in Level 
-1 of our university studies so it would python is a language we have all used and are 
+Browser. We were taught python for our introduction to programming course in Level 
+1 of our university studies, so python is a language we have all used and are 
 comfortable with. Moreover, a developer needs not have their own computer with them 
-to work on the development of the application. Web2Py gives the ability to a developer 
-to work on the code of the application via a web interface which can be particularly 
-useful in case one of the team members is traveling and is not able to use their own 
+to work on the development of the application. Web2Py provides a developer with the ability 
+to work on the code of the application via a web interface, which can be particularly 
+useful in case one of the team members is travelling and is not able to use their own 
 computer to work on application. \\
 Django is an MVT (Model, View, Template) based framework that runs with Python on 
 its back end. This gives us the advantage of having separation of concerns in our 
@@ -639,11 +639,10 @@ other so a developer can work on one part of the application while another can w
 a different component without having to wait for a different component to be completed. 
 Django is an extremely customisable framework since it comes packed with a lot of 
 functionality which can be used out of the box or can be further modified to reflect our 
-goals and objectives. On the other hand it might take time to learn since it has its own 
+goals and objectives. On the other hand, it might take time to learn since it has its own 
 way of doing things and a developer needs to adapt to it.
-
 \subsection {Why Django}
-We decided to use Django since it gives us great flexibility as to what our end product 
+We decided to use Django as it provides us with greater flexibility as to what our end product 
 can be like, it is documented extremely well online and even though learning it can take 
 some time, we consider it to be a well worth investment since we will have to use 
 Django in one of our courses in second semester as well. 
@@ -653,15 +652,15 @@ perfectionists with deadlines''. It is a rapid web development framework that ca
 you the trouble of writing repetitive boilerplate code. A developer using Django can 
 achieve greatness with minimal coding. Django comes with an object relational mapper 
 which means that we can define our database schema in Python code by defining 
-classes and Django will then produce an sql code that can be injected in our database 
+classes and Django will then produce an SQL code that can be injected into our database 
 with minimal effort from the developer in order to create any tables required for the 
-project. It has a dynamic build in administration interface which can be customised 
+project. It has a dynamic built in administration interface which can be customised 
 according to our needs. This can be used, in our case, as a way for a Course 
 Coordinator or a Tutor to create new topics, add slides and questions to each topic, 
 create questions for the final assessment page and create new users or groups of users 
 with special permissions. This will be discussed further in this report.
 \subsection{The MVT Model}
-The MVT model used by django is a development mode very similar to the MVC model which is widely used by a number of web application 
+The MVT model used by Django is a development mode very similar to the MVC model which is widely used by a number of web application 
 frameworks such as Backbone.js SproutCore and the Cocoa framework used in Mac OS X and iOS applications. Django, since it likes to do things its own way, uses a ``modified'' version of the MVC model. Its model is called MVT (Model, View, Template). The model in the MVC 
 plays the same role as the model in MVT which is sensible. However, the ``View'' in the 
 MVT maps to the ``Controller'' of the MVC and the ``Template'' of the MVT maps to the 
@@ -671,13 +670,13 @@ The MVT in general defines the way everything works in Django. Everything in Dja
 can be broken down to 3 components; The Models, the Templates and the Views.
 \subsection{Models}
 ``A model is the single, definitive source of data about your data. It contains the essential 
-fields and behaviours of the data you are storing''(Django website). In other words, any a 
+fields and behaviours of the data you are storing''(Django website). In other words, any 
 table in the database can be created by defining a model in the Models.py file. A 
 database field for that table can be defined as an attribute of the corresponding model. 
 The command ``manage.py syncdb'' will then read the Models.py file create an SQL code 
-and then run it agains the applications database to create any tables defined by the 
+and then run it against the applications database to create any tables defined by the 
 developer. 
-For example if the code in picture below is run it will create a Database table of topics 
+For example, if the code in picture below is run, it will create a Database table of topics, 
 where each topic has a title and a publication date. \\
 class Topic(models.Model): \\
 title = models.CharField(max\_length=100) \\
@@ -689,8 +688,8 @@ page associated with each view. Such actions might be read or write to the datab
 commands or any other actions that are required by a page.
 \subsection{Templates}
 A template is usually an html file. It is the base of what will be send on to a web browser 
-client. It described how the data should be presented to the user and can contain a 
-number of Django tags and variables. A tag is surrounded by ``{%'' and ``%}'' and tells 
+client. It describes how the data should be presented to the user and can contain a 
+number of Django tags and variables. A tag is surrounded by ``\{\%'' and ``\%\}'' and tells 
 Django that a special action needs to be taken at that point of the page. This special 
 action can be an ``if'' statement, a ``for'' loop etc. A variable is simply telling Django to load 
 a specific value from the Database and display it at this point of the page. Templates are 
@@ -698,27 +697,27 @@ used by Django as the model for a page to be sent to a web client.
 \subsection{Controller}
 Each Django application has a ``urls.py'' file which holds definitions that will be matched 
 against requests by web clients. An example url definition in ``urls.py'' could be \\
-\verb|``url(r ^'contents', 'views.contents')''|. \\In this scenario if our server is hosted on 127.0.0.1 
-port 8000 and a client requests ``127.0.0.1:8000/contents'' Django will match the 
+\verb|``url(r ^'contents', 'views.contents')''|. \\In this scenario, if our server is hosted on 127.0.0.1 
+port 8000 and a client requests ``127.0.0.1:8000/contents'', Django will match the 
 request with the definition in ``urls.py'' and call the appropriate view which is the second 
 argument of the url() function. In this case it will be the ``contents'' view.
 \section{3-Tier Architecture}
 For our implementation we used a 3-Tier Architecture.
 \begin{figure}[!htb]
 \caption{3-Tier Architecture Diagram}
- \centering
+\centering
 \includegraphics[width=0.9\textwidth]{images/ntier.jpg}
 \end{figure}
 \subsection{Front End}
 The application can be accessed by any user with a web browser such as Internet 
 Explorer, Google Chrome, Mozzila Firefox, Safari and so on. \\
 \subsection{Middleware}
-This is our Django server. Responsible for matching requests from Clients using the 
-URL dispatcher which in return calls the appropriate View which then fetches any 
+This is our Django server which is responsible for matching requests from Clients, using the 
+URL dispatcher which in return calls the appropriate View, which then fetches any 
 required context from the Models.py and our Backend Services. 
 \subsection{Back End}
 This is our Sqlite3 Database. Other database options included MySQL, Oracle or 
-PostgreSQL. However we opted in for Sqlite3 since it offers all the functionality we 
+PostgreSQL. However, we opted in for Sqlite3 since it offers all the functionality we 
 need and Django provides more support for it as it is its default option. \\
 \section{Back End - Data Models}
 Our database consists of 4 basic data models. Namely, Topic, Question, FinalTestQuestion and Slide. According to our requirements, a Topic can have 0 or more questions and slides. Thus, the Question and Slide objects both have a foreign key that points to the Topic they belong to. More information on the definitions of our Data Models can be seen in the tables below: 
@@ -726,7 +725,7 @@ Our database consists of 4 basic data models. Namely, Topic, Question, FinalTest
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline title & CharField & 1000 characters max \\ 
-\hline pub\_date & DateTime &  \\ \hline
+\hline pub\_date & DateTime & \\ \hline
 \end{tabular}
 \subsection{Data Model:Question}
 \begin{tabular}{|c|c|c|}
@@ -735,27 +734,24 @@ Our database consists of 4 basic data models. Namely, Topic, Question, FinalTest
 \hline text & CharField & 1500 characters max \\
 \hline answer & CharField & 100 characters max \\ \hline
 \end{tabular}
-
 \subsection{Data Model:FinalTestQuestion}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline text & CharField & 2000 Characters max length \\ 
 \hline answer & CharField & 100 characters max \\ \hline
 \end{tabular}
-
 \subsection{Data Model:Slide}
 \begin{tabular}{|c|c|c|}
 \hline \textbf{Field Name} & \textbf{Type} & \textbf{Notes}\\
 \hline sTopic & ForeignKey & Points to a Topic object \\ 
-\hline image & ImageField &  \\ \hline
+\hline image & ImageField & \\ \hline
 \end{tabular}
-
 \section{Managing the Front End}
 The way Django is generally managing the Front End of an application is quite 
 straight forward. It simply takes a predefined template (html file), adds any required 
 content from the models (database objects) and sends the file over to a web browser. 
-However creating simple html files and feeding them the data from our models is not 
-enough to produce a high quality web application. Producing a rich interactive user interface was extremely important in our case since the application would be used by students to assist their studying. Students can easily get tired of studying and abandon their task so we had to make the interface as attractive as possible, in the little time we had, so that a user can stay motivated and enjoy using it the application.The fact that we were not 
+However, creating simple html files and feeding them the data from our models is not 
+enough to produce a high quality web application. Producing a rich interactive user interface was extremely important in our case since the application would be used by students to assist their studying. Students can easily get tired of studying and abandon their task so we had to make the interface as attractive as possible, in the little time we had, so that a user can stay motivated and enjoy using the application. The fact that we were not 
 experienced in web application was not helping us find a solution without investing 
 some time on researching. In our quest to find a way to manage the front end design 
 we looked at a number of solutions. Some of them were the ``Backbone.js'', ``Tastypie'' 
@@ -768,60 +764,56 @@ As its website states, ``Backbone.js gives structure to web applications by prov
 models with key-value binding and custom events, collections with a rich API of 
 enumerable functions, views with declarative event handling, and connects it all to 
 your existing API over a RESTful JSON interface''. Fair enough, now how can we 
-proceed and use this Framework with our Django application? A number of github 
-repositories were available online, all with example applications using Backbone. 
+proceed and use this Framework with our Django application? A number of Github 
+repositories were available online, all with example applications using ``Backbone’’. 
 However, since all of them were out of date and description for Backbone and 
 Django integration was vague at best, we soon abandoned the idea of using 
 Backbone. 
 \subsubsection{Pyjamas}
 Pyjamas is a framework which takes code written in Python and translates that 
 into javascript and jquery code without the need of having a developer experienced 
-in using javascript and jquery. We managed to get Pyjamas set up successfullly, 
+in using javascript and jquery. We managed to get Pyjamas set up successfully, 
 but the result was not exactly what we expected. The design looked poor and we 
 had to invest even more time in advancing our skills on coding a GUI with python
-\subsubsection{Compination of traditional Django friendly frameworks}
+\subsubsection{Combination of traditional Django friendly frameworks}
 Luckily for us, one of our team members who is really confident on his web design skills
-convinced us that surely using traditional web design methods, such as writing the code for the templates directly in javascript and using a simple collection of tools such as the Twitter Bootstrap might be worth looking into. He suggested that he can try work out a first draft of the Topics page so that we can see what he can produce with these tools and judge for ourselves. Creating the page actually took him less than one hour and that was a wakeup call for us since the sample page he created was both looking aesthetically nice and the technologies used were working with the Django seamlessly with minimal effort.  
-We started by creating a base.html template. Django gives a developer the option to create templates that inherit from other templates. So any code that needs to be repeated in every page needs not be defined more than once. Our  base page with no additional content can be seen on figure 1.2 .
+convinced us that surely using traditional web design methods, such as writing the code for the templates directly in javascript and using a simple collection of tools such as the Twitter Bootstrap might be worth looking into. He suggested that he can try work out a first draft of the Topics page so that we can see what he can produce with these tools and judge for ourselves. Creating the page actually took him less than one hour and that was a wakeup call for us since the sample page he created was both looking aesthetically nice and the technologies used were working with the Django seamlessly with minimal effort. 
+We started by creating a base.html template. Django gives a developer the option to create templates that inherit from other templates. So any code that needs to be repeated in every page needs not be defined more than once. Our base page with no additional content can be seen on figure 5.2 .
 \begin{figure}[h!]
-   \caption{Base.html Template}
-   \centering
-     \includegraphics[width=0.6\textwidth]{images/base.jpg}
+\caption{Base.html Template}
+\centering
+\includegraphics[width=0.6\textwidth]{images/base.jpg}
 \end{figure}
-This includes the basic layout that should be displayed on ALL templates of our application. So to make the connection between our base template and all other template we had to define an empty Django tag  called “content block” in our base.html template (see figure 1.3). 
+This includes the basic layout that should be displayed on ALL templates of our application. So to make the connection between our base template and all other template we had to define an empty Django tag called “content block” in our base.html template (see figure 5.3). 
 \begin{figure}[h!]
-   \caption{The Base.html template with no additional content}
-   \centering
-     \includegraphics[width=0.6\textwidth]{images/baseblock.jpg}
+\caption{The Base.html template with no additional content}
+\centering
+\includegraphics[width=0.6\textwidth]{images/baseblock.jpg}
 \end{figure}
 Then on every page that needs to inherit from base.html we can define the content block so that it includes any additional data that each specific template may require. An example of how a block is defined in a base template is shown in figure “baseblock.jpg” and then the way the base template is inherited and the “content block” is used can be seen on figure ``extendsbase''.
 \begin{figure}[h!]
-   \caption{Contents template inherits from base.html.}
-   \centering
-     \includegraphics[width=0.7\textwidth]{images/extendsbase.jpg}
+\caption{Contents template inherits from base.html.}
+\centering
+\includegraphics[width=0.7\textwidth]{images/extendsbase.jpg}
 \end{figure}
-
 \section{Middleware: Linking the back with the front}
-Django makes the connection between the backend data models and the front end templates by interpreting a request from a web client, finding the required template for that request and rendering the context on the page by replacing all Django tags (text surrounded by '{\%' and  '\%}') with data returned by the responsible view for that request.  For  instance, figure **contentsView** shows how the contents View is defined. The tag “topics” is declared as a list of Topic objects and then by adding the key “topics” into the contents view context we are telling the view to return the list “topics” every time the tag “topics” is found on the template “contents.html”. Then in template “contents.html” we make use of a for loop to iterate through the topics list, and print out the topic name with a link to its unique url. After the template has been rendered it is sent on to the web browser where it is presented to the urer who requested the page.
+Django makes the connection between the backend data models and the front end templates by interpreting a request from a web client, finding the required template for that request and rendering the context on the page by replacing all Django tags (text surrounded by '{\%' and '\%}') with data returned by the responsible view for that request. For instance, figure **contentsView** shows how the contents View is defined. The tag “topics” is declared as a list of Topic objects and then by adding the key “topics” into the contents view context we are telling the view to return the list “topics” every time the tag “topics” is found on the template “contents.html”. Then in template “contents.html” we make use of a for loop to iterate through the topics list, and print out the topic name with a link to its unique url. After the template has been rendered it is sent on to the web browser where it is presented to the user who requested the page.
 \section{Message Passing}
-
 \subsection{Database Request Format}
-Database Requests are handled by Django. A template may require
-information about a specific data model. The view that makes use of
-that specific model makes an SQL request to the database which in turn returns any matching results from our SQLite database.
+Database Requests are handled by Django. A template may require information about a specific data model. The view that makes use of that specific model makes an SQL request to the database which in turn returns any matching results from our SQLite database.
 \begin{figure}[h!]
-   \caption{Database Request figure}
-   \centering
-     \includegraphics[width=0.5\textwidth]{images/databaseMessagePassing.png}
+\caption{Database Request figure}
+\centering
+\includegraphics[width=0.5\textwidth]{images/databaseMessagePassing.png}
+\end{figure}
+\subsection{Answer Validation Request}
+The validation of answers is done by an Ajax request to the “validateAnswer” view or to the “validateFinalAnswer” view when the answer to be validated belongs to a final assessment type question. The validation is done by passing the question id and the provided answer as URL parameters. The view then makes a request to the database requesting the answer of the required question. If the answer provided by the user is the same as the one stored in the database, the view will respond to the web client with an appropriate Http Response as on figure 5.6.
+\begin{figure}[h!]
+\caption{Answer Validation Request figure.}
+\centering
+\includegraphics[width=0.6\textwidth]{images/validateAnswerRequest.png}
 \end{figure}
 
-\subsection{Answer Validation Request}
-The validation of answers is done by an Ajax request to  the “validateAnswer” view or to the “validateFinalAnswer” view when the answer to be validated belongs to a final assessment type question. The validation is done by passing the question ID and the provided answer as URL parameters. The view  then makes a request to the database requesting the answer of the required question. If the answer provided by the user is the same as the one stored in the database the view will respond to the web client with an appropriate HTTP Response as on figure 1.6.
-\begin{figure}[h!]
-   \caption{Answer Validation Request figure.}
-   \centering
-     \includegraphics[width=0.6\textwidth]{images/validateAnswerRequest.png}
-\end{figure} 
 
 \subsection{Topic Related Data Request}
 Topic requests make use of the “Topic” view. The view uses the “topic.html” template and renders it so that it gains access to a list of Topic objects. When, for example, a user needs to navigate to the appropriate page for the first topic in the Topic objects list, they should navigate to “/topic/0” where 0 is the position of the first Topic objects in the topics list. When the slides of a specific Topic need to be displayed, a FOR loop is used to iterate through the list of slides and return only those that point to the Topic that was originally requested by the URL.
