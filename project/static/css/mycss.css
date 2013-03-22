@@ -9,4 +9,8 @@ color:red;
 height:100%;
 background-color: #007A85;
 }
+.content
+{
+min-height:415px;
+}
 body,html{background-color: #007A85;}

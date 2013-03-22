@@ -3468,15 +3468,15 @@ input[type="button"].btn-block {
 .btn-danger {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #debb27;
-  *background-color: #debb27;
+  background-color: #e13d5d;
+  *background-color: #e13d5d;
   background-image: -moz-linear-gradient(top, #debb27, #debb27);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#debb27), to(#debb27));
   background-image: -webkit-linear-gradient(top, #debb27, #debb27);
   background-image: -o-linear-gradient(top, #debb27, #debb27);
   background-image: linear-gradient(to bottom, #debb27, #debb27);
   background-repeat: repeat-x;
-  border-color: #debb27 #debb27 #a08618;
+  border-color: #e13d5d #e13d5d #a08618;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdebb27', endColorstr='#ffdebb27', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -3489,13 +3489,13 @@ input[type="button"].btn-block {
 .btn-danger.disabled,
 .btn-danger[disabled] {
   color: #ffffff;
-  background-color: #debb27;
+  background-color: #e13d5d;
   *background-color: #ccab1f;
 }
 
 .btn-danger:active,
 .btn-danger.active {
-  background-color: #b6991c \9;
+  background-color: #e13d5d \9;
 }
 
 .btn-success {

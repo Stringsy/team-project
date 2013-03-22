@@ -11,12 +11,20 @@ p.hidden {visibility:hidden;}
 		  	<label>{{question|linebreaks}}</label>
 		  	<input style="width: 80%;" id="text{{question.id}}" type="text{{question.id}}" placeholder="Answer">					
 		  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		  	
 		 	<script>
-			$(document).ready(function() {
-			$('#{{question.id}}ans').click(function(){
+			$(document).ready(function() {	
+			$('#submitall').click(function(){	
+			var u;
+			for (u = 0; u < 1; ++u) { 
+				  			}
+				  			 $('.btn-small').click();
+
+			});
+			$('#ans{{question.id}}').click(function(){
 			$.get('/validate_final_answer/{{question.id}}/'+$("#text{{question.id}}").val(), function(data){
 			var $bar = $('.bar');
-			document.getElementById('{{question.id}}ans').style.visibility='hidden';
+			document.getElementById('ans{{question.id}}').style.visibility='hidden';
 			document.getElementById('{{question.id}}feedback').style.visibility='';
 			var score = +document.getElementById('lbltipAddedComment').innerHTML;
 
@@ -52,11 +60,11 @@ p.hidden {visibility:hidden;}
 			});
 			});
 		   </script>	
-		   <a id="{{question.id}}ans" class="btn btn-success btn-small">Submit Answer</a>
+		   <a id="ans{{question.id}}" class="btn btn-inverse btn-small">Submit Answer</a>
 		   <div class="danger" id="{{question.id}}feedback" style="visibility:hidden;" ></div>				
 	    </div>
 	    {% endfor %}
-	 </div>
+<div class="span4 offset3"> <a id="submitall" class="btn btn-inverse btn-large">Submit All Answers</a></div>	 </div>
 	 <div class="span4">
 	 	<div class="well" data-spy="affix" data-offset-top="60%">
   <div class="progress progress-danger progress-striped">
